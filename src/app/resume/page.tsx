@@ -1,9 +1,11 @@
 'use client'
 
 import { FC } from 'react'
+// import dynamic from 'next/dynamic'
 import { motion } from 'framer-motion'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+// import exportedTabs from '@/components/ui/tabs'
 import {
   Tooltip,
   TooltipContent,
@@ -26,6 +28,12 @@ import {
   FaNodeJs,
 } from 'react-icons/fa'
 
+// const exportedTabs = dynamic(() => import('@/components/ui/tabs'), {
+//   ssr: false,
+// })
+
+// const { Tabs, TabsContent, TabsList, TabsTrigger } = exportedTabs
+
 const about: IAboutMe = {
   title: 'About Me',
   description:
@@ -44,7 +52,6 @@ const about: IAboutMe = {
 }
 
 const experience: IExperience = {
-  icon: '/assets/resume/badge.svg',
   title: 'My experience',
   description:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel bibendum ipsum. Integer vel libero vel velit sagittis tincidunt. In hac habitasse platea dictumst.',
@@ -100,7 +107,6 @@ const experience: IExperience = {
 }
 
 const education: IEducation = {
-  icon: '/assets/resume/cap.svg',
   title: 'My education',
   description:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel bibendum ipsum. Integer vel libero vel velit sagittis tincidunt. In hac habitasse platea dictumst.',

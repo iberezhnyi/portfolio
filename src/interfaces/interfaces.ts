@@ -1,5 +1,10 @@
 import { ReactNode } from 'react'
 
+export interface ILinkItem {
+  name: string
+  path: string
+}
+
 // home
 export interface IStat {
   num: number
@@ -40,7 +45,6 @@ interface IInfoField {
 }
 
 export interface IExperience {
-  icon: string
   title: string
   description: string
   items: IExperienceItem[]
@@ -53,7 +57,6 @@ interface IExperienceItem {
 }
 
 export interface IEducation {
-  icon: string
   title: string
   description: string
   items: IEducationItem[]

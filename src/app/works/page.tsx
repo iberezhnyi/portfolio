@@ -24,7 +24,7 @@ const projects: IProject[] = [
     description:
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, voluptatum magnam ullam, tempore exercitationem.',
     stack: [{ name: 'Html 5' }, { name: 'Css 3' }, { name: 'Javascript' }],
-    image: '/assets/works/thumb1.png',
+    image: '/assets/works/project-1.png',
     live: '',
     github: '',
   },
@@ -36,7 +36,7 @@ const projects: IProject[] = [
     description:
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, voluptatum magnam ullam, tempore exercitationem.',
     stack: [{ name: 'Next.js' }, { name: 'Tailwind.css' }, { name: 'Node.js' }],
-    image: '/assets/works/thumb2.png',
+    image: '/assets/works/project-2.png',
     live: '',
     github: '',
   },
@@ -48,7 +48,7 @@ const projects: IProject[] = [
     description:
       'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, voluptatum magnam ullam, tempore exercitationem.',
     stack: [{ name: 'Next.js' }, { name: 'Tailwind.css' }],
-    image: '/assets/works/thumb3.png',
+    image: '/assets/works/project-3.png',
     live: '',
     github: '',
   },

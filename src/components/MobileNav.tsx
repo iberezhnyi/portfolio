@@ -1,39 +1,43 @@
-"use client";
+'use client'
 
-import { usePathname } from "next/navigation";
-import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
-import { CiMenuFries } from "react-icons/ci";
-import Link from "next/link";
+import { FC } from 'react'
+import { usePathname } from 'next/navigation'
+import Link from 'next/link'
+import { Sheet, SheetContent, SheetTrigger } from './ui/sheet'
+import { ILinkItem } from '@/interfaces/interfaces'
+import { CiMenuFries } from 'react-icons/ci'
 
-const links = [
+const links: ILinkItem[] = [
   {
-    name: "home",
-    path: "/",
+    name: 'home',
+    path: '/',
   },
 
   {
-    name: "resume",
-    path: "/resume",
+    name: 'resume',
+    path: '/resume',
   },
 
   {
-    name: "works",
-    path: "/works",
+    name: 'works',
+    path: '/works',
   },
 
   {
-    name: "contacts",
-    path: "/contacts",
+    name: 'contacts',
+    path: '/contacts',
   },
-];
+]
 
-const MobileNav = () => {
-  const pathname = usePathname();
+const MobileNav: FC = () => {
+  const pathname = usePathname()
+
   return (
     <Sheet>
       <SheetTrigger className="flex justify-center items-center">
         <CiMenuFries className="text-[32px] text-accent" />
       </SheetTrigger>
+
       <SheetContent className="flex flex-col">
         <div className="mt-32 mb-40 text-center text-2xl">
           <Link href="/">
@@ -47,7 +51,7 @@ const MobileNav = () => {
           {links.map((link, index) => (
             <Link
               className={`${
-                link.path === pathname && "text-accent border-b-2 border-accent"
+                link.path === pathname && 'text-accent border-b-2 border-accent'
               } text-xl capitalize hover:text-accent transition-all`}
               href={link.path}
               key={index}
@@ -58,7 +62,7 @@ const MobileNav = () => {
         </nav>
       </SheetContent>
     </Sheet>
-  );
-};
+  )
+}
 
-export default MobileNav;
+export default MobileNav

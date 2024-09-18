@@ -1,8 +1,8 @@
-import Link from "next/link";
-import { FC } from "react";
-import Nav from "./Nav";
-import { Button } from "./ui/button";
-import MobileNav from "./MobileNav";
+import { FC } from 'react'
+import Link from 'next/link'
+import Nav from './Nav'
+import { Button } from './ui/button'
+import MobileNav from './MobileNav'
 
 const Header: FC = () => {
   return (
@@ -16,7 +16,8 @@ const Header: FC = () => {
 
         <div className="hidden xl:flex items-center gap-8">
           <Nav />
-          <Link href="/contact">
+
+          <Link href="/contacts">
             <Button>Hire me</Button>
           </Link>
         </div>
@@ -26,7 +27,7 @@ const Header: FC = () => {
         </div>
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
