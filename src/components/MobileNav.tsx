@@ -19,8 +19,8 @@ const links: ILinkItem[] = [
   },
 
   {
-    name: 'works',
-    path: '/works',
+    name: 'projects',
+    path: '/projects',
   },
 
   {

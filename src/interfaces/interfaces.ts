@@ -1,3 +1,5 @@
+import { contactsIconMap } from '@/components/contacts/ContactsList'
+import { techIconMap } from '@/components/resume/Skills'
 import { ReactNode } from 'react'
 
 export interface ILinkItem {
@@ -16,7 +18,7 @@ export interface ISocial {
   path: string
 }
 
-// works
+// Projects
 export interface IProject {
   num: string
   category: string
@@ -75,13 +77,13 @@ export interface ISkills {
 }
 
 interface ISkill {
-  icon: ReactNode
+  icon: keyof typeof techIconMap
   name: string
 }
 
 // contacts
 export interface IContactInfoItem {
-  icon: ReactNode
+  icon: keyof typeof contactsIconMap
   title: string
   description: string
 }
