@@ -1,74 +1,74 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
+import { FC, useState } from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import { motion } from 'framer-motion'
+import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
-import WorksSliderBtns from "@/components/WorksSliderBtns";
-import { IProject } from "@/interfaces/interfaces";
-import { BsArrowUpRight, BsGithub } from "react-icons/bs";
-import "swiper/css";
+} from '@/components/ui/tooltip'
+import WorksSliderBtns from '@/components/WorksSliderBtns'
+import { IProject } from '@/interfaces/interfaces'
+import { BsArrowUpRight, BsGithub } from 'react-icons/bs'
+import 'swiper/css'
 
 const projects: IProject[] = [
   {
-    num: "01",
-    category: "frontend",
-    title: "Project 1",
+    num: '01',
+    category: 'frontend',
+    title: 'Project 1',
     description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, voluptatum magnam ullam, tempore exercitationem.",
-    stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }],
-    image: "/assets/works/thumb1.png",
-    live: "",
-    github: "",
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, voluptatum magnam ullam, tempore exercitationem.',
+    stack: [{ name: 'Html 5' }, { name: 'Css 3' }, { name: 'Javascript' }],
+    image: '/assets/works/thumb1.png',
+    live: '',
+    github: '',
   },
 
   {
-    num: "02",
-    category: "fullstack",
-    title: "Project 2",
+    num: '02',
+    category: 'fullstack',
+    title: 'Project 2',
     description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, voluptatum magnam ullam, tempore exercitationem.",
-    stack: [{ name: "Next.js" }, { name: "Tailwind.css" }, { name: "Node.js" }],
-    image: "/assets/works/thumb2.png",
-    live: "",
-    github: "",
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, voluptatum magnam ullam, tempore exercitationem.',
+    stack: [{ name: 'Next.js' }, { name: 'Tailwind.css' }, { name: 'Node.js' }],
+    image: '/assets/works/thumb2.png',
+    live: '',
+    github: '',
   },
 
   {
-    num: "03",
-    category: "frontend",
-    title: "Project 3",
+    num: '03',
+    category: 'frontend',
+    title: 'Project 3',
     description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, voluptatum magnam ullam, tempore exercitationem.",
-    stack: [{ name: "Next.js" }, { name: "Tailwind.css" }],
-    image: "/assets/works/thumb3.png",
-    live: "",
-    github: "",
+      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, voluptatum magnam ullam, tempore exercitationem.',
+    stack: [{ name: 'Next.js' }, { name: 'Tailwind.css' }],
+    image: '/assets/works/thumb3.png',
+    live: '',
+    github: '',
   },
-];
+]
 
-const Works = () => {
-  const [project, setProject] = useState<IProject>(projects[0]);
+const Works: FC = () => {
+  const [project, setProject] = useState<IProject>(projects[0])
 
   const handleSlideChange = (swiper: SwiperClass) => {
-    const currentIndex = swiper.activeIndex;
+    const currentIndex = swiper.activeIndex
 
-    setProject(projects[currentIndex]);
-  };
+    setProject(projects[currentIndex])
+  }
 
   return (
     <motion.section
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
+        transition: { delay: 2.4, duration: 0.4, ease: 'easeIn' },
       }}
       className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
     >
@@ -90,7 +90,7 @@ const Works = () => {
                 {project.stack.map((item, index) => (
                   <li key={index} className="text-xl text-accent">
                     {item.name}
-                    {index !== project.stack.length - 1 && ","}
+                    {index !== project.stack.length - 1 && ','}
                   </li>
                 ))}
               </ul>
@@ -160,7 +160,7 @@ const Works = () => {
         </div>
       </div>
     </motion.section>
-  );
-};
+  )
+}
 
-export default Works;
+export default Works

@@ -1,9 +1,9 @@
-import { FC } from "react";
-import { Button } from "@/components/ui/button";
-import Photo from "@/components/Photo";
-import Socials from "@/components/Socials";
-import Stats from "@/components/Stats";
-import { FiDownload } from "react-icons/fi";
+import { FC } from 'react'
+import { Button } from '@/components/ui/button'
+import Photo from '@/components/Photo'
+import Socials from '@/components/Socials'
+import Stats from '@/components/Stats'
+import { FiDownload } from 'react-icons/fi'
 
 const Home: FC = () => {
   return (
@@ -46,7 +46,7 @@ const Home: FC = () => {
       </div>
       <Stats />
     </section>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

@@ -1,11 +1,13 @@
-"use client";
+'use client'
 
-import { AnimatePresence, motion } from "framer-motion";
-import { usePathname } from "next/navigation";
-import Stairs from "./Stairs";
+import { FC } from 'react'
+import { usePathname } from 'next/navigation'
+import { AnimatePresence, motion } from 'framer-motion'
+import Stairs from './Stairs'
 
-const StairsTransition = () => {
-  const pathname = usePathname();
+const StairsTransition: FC = () => {
+  const pathname = usePathname()
+
   return (
     <AnimatePresence mode="wait">
       <div key={pathname}>
@@ -18,12 +20,12 @@ const StairsTransition = () => {
           initial={{ opacity: 1 }}
           animate={{
             opacity: 0,
-            transition: { delay: 1, duration: 0.4, ease: "easeInOut" },
+            transition: { delay: 1, duration: 0.4, ease: 'easeInOut' },
           }}
         />
       </div>
     </AnimatePresence>
-  );
-};
+  )
+}
 
-export default StairsTransition;
+export default StairsTransition

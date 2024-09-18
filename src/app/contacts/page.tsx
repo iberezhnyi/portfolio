@@ -1,8 +1,8 @@
-"use client";
+'use client'
 
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-import { motion } from "framer-motion";
-import { Input } from "@/components/ui/input";
+import { FC } from 'react'
+import { motion } from 'framer-motion'
+import { Input } from '@/components/ui/input'
 import {
   Select,
   SelectContent,
@@ -11,37 +11,39 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
+} from '@/components/ui/select'
+import { Textarea } from '@/components/ui/textarea'
+import { Button } from '@/components/ui/button'
+import { IContactInfoItem } from '@/interfaces/interfaces'
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
 
-const info = [
+const info: IContactInfoItem[] = [
   {
     icon: <FaPhoneAlt />,
-    title: "Phone",
-    description: "+38(063) 111 11 11",
+    title: 'Phone',
+    description: '+38(063) 111 11 11',
   },
 
   {
     icon: <FaEnvelope />,
-    title: "Email",
-    description: "iberezhnyi@gmail.com",
+    title: 'Email',
+    description: 'iberezhnyi@gmail.com',
   },
 
   {
     icon: <FaMapMarkerAlt />,
-    title: "Address",
-    description: "Ukraine, Kyiv",
+    title: 'Address',
+    description: 'Ukraine, Kyiv',
   },
-];
+]
 
-const Contacts = () => {
+const Contacts: FC = () => {
   return (
     <motion.section
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
+        transition: { delay: 2.4, duration: 0.4, ease: 'easeIn' },
       }}
       className="py-6"
     >
@@ -104,7 +106,7 @@ const Contacts = () => {
         </div>
       </div>
     </motion.section>
-  );
-};
+  )
+}
 
-export default Contacts;
+export default Contacts

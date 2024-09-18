@@ -1,15 +1,17 @@
-"use client";
+'use client'
 
-import CountUp from "react-countup";
+import { FC } from 'react'
+import CountUp from 'react-countup'
+import { IStat } from '@/interfaces/interfaces'
 
-const stats = [
-  { num: 1, text: "Years of experience" },
-  { num: 3, text: "Projects completed" },
-  { num: 8, text: "Technologies mastered" },
-  { num: 500, text: "Code commits" },
-];
+const stats: IStat[] = [
+  { num: 1, text: 'Years of experience' },
+  { num: 3, text: 'Projects completed' },
+  { num: 8, text: 'Technologies mastered' },
+  { num: 500, text: 'Code commits' },
+]
 
-const Stats = () => {
+const Stats: FC = () => {
   return (
     <section className="pt-4 pb-12 xl:pt-0 xl:pb-0">
       <div className="container mx-auto">
@@ -27,7 +29,7 @@ const Stats = () => {
               />
               <p
                 className={`${
-                  item.text.length < 15 ? "max-w-[100px]" : "max-w-[150px]"
+                  item.text.length < 15 ? 'max-w-[100px]' : 'max-w-[150px]'
                 } leading-snug text-white/80`}
               >
                 {item.text}
@@ -37,7 +39,7 @@ const Stats = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Stats;
+export default Stats

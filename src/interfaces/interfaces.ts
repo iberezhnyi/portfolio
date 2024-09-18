@@ -1,64 +1,84 @@
+import { ReactNode } from 'react'
+
+// home
+export interface IStat {
+  num: number
+  text: string
+}
+
+export interface ISocial {
+  icon: ReactNode
+  path: string
+}
+
 // works
 export interface IProject {
-  num: string;
-  category: string;
-  title: string;
-  description: string;
-  stack: IStack[];
-  image: string;
-  live: string;
-  github: string;
+  num: string
+  category: string
+  title: string
+  description: string
+  stack: IStack[]
+  image: string
+  live: string
+  github: string
 }
 
 interface IStack {
-  name: string;
+  name: string
 }
 
 // resume
 export interface IAboutMe {
-  title: string;
-  description: string;
-  info: IInfoField[];
+  title: string
+  description: string
+  info: IInfoField[]
 }
 
 interface IInfoField {
-  fieldName: string;
-  fieldValue: string;
+  fieldName: string
+  fieldValue: string
 }
 
 export interface IExperience {
-  icon: string;
-  title: string;
-  description: string;
-  items: IExperienceItem[];
+  icon: string
+  title: string
+  description: string
+  items: IExperienceItem[]
 }
 
 interface IExperienceItem {
-  company: string;
-  position: string;
-  duration: string;
+  company: string
+  position: string
+  duration: string
 }
 
 export interface IEducation {
-  icon: string;
-  title: string;
-  description: string;
-  items: IEducationItem[];
+  icon: string
+  title: string
+  description: string
+  items: IEducationItem[]
 }
 
 interface IEducationItem {
-  institution: string;
-  degree: string;
-  duration: string;
+  institution: string
+  degree: string
+  duration: string
 }
 
 export interface ISkills {
-  title: string;
-  description: string;
-  skillList: ISkill[];
+  title: string
+  description: string
+  skillList: ISkill[]
 }
 
 interface ISkill {
-  icon: JSX.Element;
-  name: string;
+  icon: ReactNode
+  name: string
+}
+
+// contacts
+export interface IContactInfoItem {
+  icon: ReactNode
+  title: string
+  description: string
 }

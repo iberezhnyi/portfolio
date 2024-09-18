@@ -1,13 +1,20 @@
-import Link from "next/link";
-import { FaGithub, FaLinkedinIn, FaTelegram } from "react-icons/fa";
+import { FC } from 'react'
+import Link from 'next/link'
+import { ISocial } from '@/interfaces/interfaces'
+import { FaGithub, FaLinkedinIn, FaTelegram } from 'react-icons/fa'
 
-const socials = [
-  { icon: <FaGithub />, path: "" },
-  { icon: <FaLinkedinIn />, path: "" },
-  { icon: <FaTelegram />, path: "" },
-];
+interface SocialsProps {
+  containerStyles: string
+  iconStyles: string
+}
 
-const Socials = ({ containerStyles, iconStyles }) => {
+const socials: ISocial[] = [
+  { icon: <FaGithub />, path: '' },
+  { icon: <FaLinkedinIn />, path: '' },
+  { icon: <FaTelegram />, path: '' },
+]
+
+const Socials: FC<SocialsProps> = ({ containerStyles, iconStyles }) => {
   return (
     <div className={containerStyles}>
       {socials.map((item, index) => (
@@ -16,7 +23,7 @@ const Socials = ({ containerStyles, iconStyles }) => {
         </Link>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default Socials;
+export default Socials

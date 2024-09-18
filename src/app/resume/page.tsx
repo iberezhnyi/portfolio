@@ -1,22 +1,22 @@
-"use client";
+'use client'
 
-import { FC } from "react";
-import { motion } from "framer-motion";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { FC } from 'react'
+import { motion } from 'framer-motion'
+import { ScrollArea } from '@/components/ui/scroll-area'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
+} from '@/components/ui/tooltip'
 import {
   IAboutMe,
   IEducation,
   IExperience,
   ISkills,
-} from "@/interfaces/interfaces";
-import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
+} from '@/interfaces/interfaces'
+import { SiTailwindcss, SiNextdotjs } from 'react-icons/si'
 import {
   FaHtml5,
   FaCss3,
@@ -24,110 +24,110 @@ import {
   FaReact,
   FaFigma,
   FaNodeJs,
-} from "react-icons/fa";
+} from 'react-icons/fa'
 
 const about: IAboutMe = {
-  title: "About Me",
+  title: 'About Me',
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel bibendum ipsum. Integer vel libero vel velit sagittis tincidunt. In hac habitasse platea dictumst.",
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel bibendum ipsum. Integer vel libero vel velit sagittis tincidunt. In hac habitasse platea dictumst.',
 
   info: [
-    { fieldName: "Name", fieldValue: "Ihor Berezhnyi" },
-    { fieldName: "Phone", fieldValue: "+38 (063) 111 11 11" },
-    { fieldName: "Experience", fieldValue: "1+ Year" },
-    { fieldName: "Nationality", fieldValue: "American" },
-    { fieldName: "Email", fieldValue: "iberezhnyi@gmail.com" },
-    { fieldName: "Telegram", fieldValue: "@iberezhnyi" },
-    { fieldName: "Freelance", fieldValue: "Available" },
-    { fieldName: "Languages", fieldValue: "English, Ukrainian, Russian" },
+    { fieldName: 'Name', fieldValue: 'Ihor Berezhnyi' },
+    { fieldName: 'Phone', fieldValue: '+38 (063) 111 11 11' },
+    { fieldName: 'Experience', fieldValue: '1+ Year' },
+    { fieldName: 'Nationality', fieldValue: 'American' },
+    { fieldName: 'Email', fieldValue: 'iberezhnyi@gmail.com' },
+    { fieldName: 'Telegram', fieldValue: '@iberezhnyi' },
+    { fieldName: 'Freelance', fieldValue: 'Available' },
+    { fieldName: 'Languages', fieldValue: 'English, Ukrainian, Russian' },
   ],
-};
+}
 
 const experience: IExperience = {
-  icon: "/assets/resume/badge.svg",
-  title: "My experience",
+  icon: '/assets/resume/badge.svg',
+  title: 'My experience',
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel bibendum ipsum. Integer vel libero vel velit sagittis tincidunt. In hac habitasse platea dictumst.",
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel bibendum ipsum. Integer vel libero vel velit sagittis tincidunt. In hac habitasse platea dictumst.',
   items: [
     {
-      company: "Tech Solutions Inc.",
-      position: "Full Stack Developer",
-      duration: "2024-present",
+      company: 'Tech Solutions Inc.',
+      position: 'Full Stack Developer',
+      duration: '2024-present',
     },
 
     {
-      company: "Web Design Studio",
-      position: "Front-End Developer Intern",
-      duration: "Summer 2023",
+      company: 'Web Design Studio',
+      position: 'Front-End Developer Intern',
+      duration: 'Summer 2023',
     },
 
     {
-      company: "E-commerce Startup",
-      position: "Freelance Web Developer",
-      duration: "2022-2023",
+      company: 'E-commerce Startup',
+      position: 'Freelance Web Developer',
+      duration: '2022-2023',
     },
 
     {
-      company: "Software Development Firm",
-      position: "Junior Developer",
-      duration: "2024",
+      company: 'Software Development Firm',
+      position: 'Junior Developer',
+      duration: '2024',
     },
 
     {
-      company: "Software Development Firm",
-      position: "Junior Developer",
-      duration: "2024",
+      company: 'Software Development Firm',
+      position: 'Junior Developer',
+      duration: '2024',
     },
 
     {
-      company: "Software Development Firm",
-      position: "Junior Developer",
-      duration: "2024",
+      company: 'Software Development Firm',
+      position: 'Junior Developer',
+      duration: '2024',
     },
 
     {
-      company: "Software Development Firm",
-      position: "Junior Developer",
-      duration: "2024",
+      company: 'Software Development Firm',
+      position: 'Junior Developer',
+      duration: '2024',
     },
 
     {
-      company: "Software Development Firm",
-      position: "Junior Developer",
-      duration: "2024",
+      company: 'Software Development Firm',
+      position: 'Junior Developer',
+      duration: '2024',
     },
   ],
-};
+}
 
 const education: IEducation = {
-  icon: "/assets/resume/cap.svg",
-  title: "My education",
+  icon: '/assets/resume/cap.svg',
+  title: 'My education',
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel bibendum ipsum. Integer vel libero vel velit sagittis tincidunt. In hac habitasse platea dictumst.",
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel bibendum ipsum. Integer vel libero vel velit sagittis tincidunt. In hac habitasse platea dictumst.',
   items: [
     {
-      institution: "GoIT",
-      degree: "Full Stack Developer",
-      duration: "2023-2024",
+      institution: 'GoIT',
+      degree: 'Full Stack Developer',
+      duration: '2023-2024',
     },
   ],
-};
+}
 
 const skills: ISkills = {
-  title: "My skills",
+  title: 'My skills',
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel bibendum ipsum. Integer vel libero vel velit sagittis tincidunt. In hac habitasse platea dictumst.",
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel bibendum ipsum. Integer vel libero vel velit sagittis tincidunt. In hac habitasse platea dictumst.',
   skillList: [
-    { icon: <FaHtml5 />, name: "HTML5" },
-    { icon: <FaCss3 />, name: "CSS3" },
-    { icon: <FaJs />, name: "JavaScript" },
-    { icon: <FaReact />, name: "React" },
-    { icon: <FaFigma />, name: "Figma" },
-    { icon: <FaNodeJs />, name: "Node.js" },
-    { icon: <SiTailwindcss />, name: "Tailwind CSS" },
-    { icon: <SiNextdotjs />, name: "Next.js" },
+    { icon: <FaHtml5 />, name: 'HTML5' },
+    { icon: <FaCss3 />, name: 'CSS3' },
+    { icon: <FaJs />, name: 'JavaScript' },
+    { icon: <FaReact />, name: 'React' },
+    { icon: <FaFigma />, name: 'Figma' },
+    { icon: <FaNodeJs />, name: 'Node.js' },
+    { icon: <SiTailwindcss />, name: 'Tailwind CSS' },
+    { icon: <SiNextdotjs />, name: 'Next.js' },
   ],
-};
+}
 
 const Resume: FC = () => {
   return (
@@ -135,7 +135,7 @@ const Resume: FC = () => {
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
+        transition: { delay: 2.4, duration: 0.4, ease: 'easeIn' },
       }}
       className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0"
     >
@@ -263,7 +263,7 @@ const Resume: FC = () => {
         </Tabs>
       </div>
     </motion.div>
-  );
-};
+  )
+}
 
-export default Resume;
+export default Resume
