@@ -1,10 +1,11 @@
+import { FC } from "react";
+import { Button } from "@/components/ui/button";
 import Photo from "@/components/Photo";
 import Socials from "@/components/Socials";
 import Stats from "@/components/Stats";
-import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
 
-const Home = () => {
+const Home: FC = () => {
   return (
     <section className="h-full">
       <div className="container mx-auto h-full">
@@ -12,7 +13,7 @@ const Home = () => {
           <div className="text-center xl:text-left order-2 xl:order-none">
             <span className="text-xl">Fullstack Developer</span>
             <h1 className="h1 mb-6">
-              Hello I'm
+              Hello I&apos;m
               <br /> <span className="text-accent">Ihor Berezhnyi</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">

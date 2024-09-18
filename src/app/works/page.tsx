@@ -1,22 +1,22 @@
 "use client";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { BsArrowUpRight, BsGithub } from "react-icons/bs";
-import { motion } from "framer-motion";
-
-import "swiper/css";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import Image from "next/image";
 import WorksSliderBtns from "@/components/WorksSliderBtns";
+import { IProject } from "@/interfaces/interfaces";
+import { BsArrowUpRight, BsGithub } from "react-icons/bs";
+import "swiper/css";
 
-const projects = [
+const projects: IProject[] = [
   {
     num: "01",
     category: "frontend",
@@ -55,9 +55,9 @@ const projects = [
 ];
 
 const Works = () => {
-  const [project, setProject] = useState(projects[0]);
+  const [project, setProject] = useState<IProject>(projects[0]);
 
-  const handleSlideChange = (swiper) => {
+  const handleSlideChange = (swiper: SwiperClass) => {
     const currentIndex = swiper.activeIndex;
 
     setProject(projects[currentIndex]);

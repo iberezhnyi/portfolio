@@ -1,5 +1,7 @@
 "use client";
 
+import { FC } from "react";
+import { motion } from "framer-motion";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
@@ -8,7 +10,13 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { motion } from "framer-motion";
+import {
+  IAboutMe,
+  IEducation,
+  IExperience,
+  ISkills,
+} from "@/interfaces/interfaces";
+import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
 import {
   FaHtml5,
   FaCss3,
@@ -18,9 +26,7 @@ import {
   FaNodeJs,
 } from "react-icons/fa";
 
-import { SiTailwindcss, SiNextdotjs } from "react-icons/si";
-
-const about = {
+const about: IAboutMe = {
   title: "About Me",
   description:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel bibendum ipsum. Integer vel libero vel velit sagittis tincidunt. In hac habitasse platea dictumst.",
@@ -37,7 +43,7 @@ const about = {
   ],
 };
 
-const experience = {
+const experience: IExperience = {
   icon: "/assets/resume/badge.svg",
   title: "My experience",
   description:
@@ -90,16 +96,10 @@ const experience = {
       position: "Junior Developer",
       duration: "2024",
     },
-
-    // {
-    //   company: "GoIT",
-    //   position: "Freelance Web Developer",
-    //   duration: "2022-2023",
-    // },
   ],
 };
 
-const education = {
+const education: IEducation = {
   icon: "/assets/resume/cap.svg",
   title: "My education",
   description:
@@ -113,7 +113,7 @@ const education = {
   ],
 };
 
-const skills = {
+const skills: ISkills = {
   title: "My skills",
   description:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel bibendum ipsum. Integer vel libero vel velit sagittis tincidunt. In hac habitasse platea dictumst.",
@@ -127,20 +127,9 @@ const skills = {
     { icon: <SiTailwindcss />, name: "Tailwind CSS" },
     { icon: <SiNextdotjs />, name: "Next.js" },
   ],
-
-  info: [
-    { fieldName: "Name", fieldValue: "Ihor Berezhnyi" },
-    { fieldName: "Phone", fieldValue: "+38 (063) 111 11 11" },
-    { fieldName: "Experience", fieldValue: "1+ Year" },
-    { fieldName: "Nationality", fieldValue: "American" },
-    { fieldName: "Email", fieldValue: "iberezhnyi@gmail.com" },
-    { fieldName: "Telegram", fieldValue: "@iberezhnyi" },
-    { fieldName: "Freelance", fieldValue: "Available" },
-    { fieldName: "Languages", fieldValue: "English, Ukrainian, Russian" },
-  ],
 };
 
-const Resume = () => {
+const Resume: FC = () => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
