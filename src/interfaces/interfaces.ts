@@ -19,6 +19,14 @@ export interface IStat {
   text: string
 }
 
+// services
+export interface IService {
+  num: string
+  title: string
+  description: string
+  href: string
+}
+
 // Projects
 export interface IProject {
   num: string

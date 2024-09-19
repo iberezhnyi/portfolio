@@ -1,37 +1,40 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss'
 
 const config: Config = {
-  darkMode: ["class"],
+  darkMode: ['class'],
 
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
 
   theme: {
     container: {
       center: true,
-      padding: "1rem",
+      padding: '1rem',
     },
 
     screens: {
-      sm: "640px",
-      md: "768px",
-      lg: "960px",
-      xl: "1200px",
+      sm: '640px',
+      md: '768px',
+      lg: '960px',
+      xl: '1200px',
     },
 
     fontFamily: {
-      primary: "var(--font-jetbrainsMono)",
+      primary: 'var(--font-jetbrainsMono)',
     },
 
     extend: {
       colors: {
-        primary: "#1C1C22",
+        primary: '#1C1C22',
         accent: {
-          DEFAULT: "#00FF99",
-          hover: "#00E187",
+          DEFAULT: '#3da5b7',
+          hover: '#3d4bb7',
+
+          // DEFAULT: '#00FF99',
+          // hover: '#00E187',
         },
         // background: "hsl(var(--background))",
         // foreground: "hsl(var(--foreground))",
@@ -75,12 +78,12 @@ const config: Config = {
         // },
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-};
-export default config;
+  plugins: [require('tailwindcss-animate')],
+}
+export default config
