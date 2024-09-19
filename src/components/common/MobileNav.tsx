@@ -3,31 +3,9 @@
 import { FC } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-import { Sheet, SheetContent, SheetTrigger } from './ui/sheet'
-import { ILinkItem } from '@/interfaces/interfaces'
+import { Sheet, SheetContent, SheetTrigger } from '../ui/sheet'
+import { links } from '@/data/common/commonData'
 import { CiMenuFries } from 'react-icons/ci'
-
-const links: ILinkItem[] = [
-  {
-    name: 'home',
-    path: '/',
-  },
-
-  {
-    name: 'resume',
-    path: '/resume',
-  },
-
-  {
-    name: 'projects',
-    path: '/projects',
-  },
-
-  {
-    name: 'contacts',
-    path: '/contacts',
-  },
-]
 
 const MobileNav: FC = () => {
   const pathname = usePathname()

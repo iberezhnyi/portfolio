@@ -1,9 +1,9 @@
 import { FC, ReactNode } from 'react'
 import type { Metadata } from 'next'
 import { JetBrains_Mono } from 'next/font/google'
-import Header from '@/components/Header'
-import PageTransition from '@/components/PageTransition'
-import StairsTransition from '@/components/StairsTransition'
+import Header from '@/components/common/Header'
+import PageTransition from '@/components/common/PageTransition'
+import StairsTransition from '@/components/common/StairsTransition'
 import './globals.css'
 
 const jetBrainsMono = JetBrains_Mono({
@@ -26,7 +26,9 @@ const RootLayout: FC<Readonly<RootLayoutProps>> = ({ children }) => {
     <html lang="en">
       <body className={jetBrainsMono.variable}>
         <Header />
+
         <StairsTransition />
+
         <PageTransition>{children}</PageTransition>
       </body>
     </html>

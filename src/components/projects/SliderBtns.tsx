@@ -4,13 +4,13 @@ import { FC } from 'react'
 import { useSwiper } from 'swiper/react'
 import { PiCaretLeftBold, PiCaretRightBold } from 'react-icons/pi'
 
-interface ProjectsSliderBtnsProps {
+interface SliderBtnsProps {
   containerStyles: string
   btnStyles: string
   iconStyles: string
 }
 
-const ProjectsSliderBtns: FC<ProjectsSliderBtnsProps> = ({
+const SliderBtns: FC<SliderBtnsProps> = ({
   containerStyles,
   btnStyles,
   iconStyles,
@@ -30,4 +30,4 @@ const ProjectsSliderBtns: FC<ProjectsSliderBtnsProps> = ({
   )
 }
 
-export default ProjectsSliderBtns
+export default SliderBtns

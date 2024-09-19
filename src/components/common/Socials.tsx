@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import Link from 'next/link'
-import { ISocial } from '@/interfaces/interfaces'
+import { socials } from '@/data/common/commonData'
 import { FaGithub, FaLinkedinIn, FaTelegram } from 'react-icons/fa'
 
 interface SocialsProps {
@@ -8,18 +8,18 @@ interface SocialsProps {
   iconStyles: string
 }
 
-const socials: ISocial[] = [
-  { icon: <FaGithub />, path: '' },
-  { icon: <FaLinkedinIn />, path: '' },
-  { icon: <FaTelegram />, path: '' },
-]
+export const socialsIconMap = {
+  FaGithub: <FaGithub />,
+  FaLinkedinIn: <FaLinkedinIn />,
+  FaTelegram: <FaTelegram />,
+}
 
 const Socials: FC<SocialsProps> = ({ containerStyles, iconStyles }) => {
   return (
     <div className={containerStyles}>
       {socials.map((item, index) => (
         <Link key={index} href={item.path} className={iconStyles}>
-          {item.icon}
+          {socialsIconMap[item.icon]}
         </Link>
       ))}
     </div>

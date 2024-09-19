@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { Button } from '@/components/ui/button'
-import Socials from './Socials'
+import Socials from '../common/Socials'
 import { FiDownload } from 'react-icons/fi'
 
 const MainInfo: FC = () => {

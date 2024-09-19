@@ -3,29 +3,7 @@
 import { FC } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-import { ILinkItem } from '@/interfaces/interfaces'
-
-const links: ILinkItem[] = [
-  {
-    name: 'home',
-    path: '/',
-  },
-
-  {
-    name: 'resume',
-    path: '/resume',
-  },
-
-  {
-    name: 'projects',
-    path: '/projects',
-  },
-
-  {
-    name: 'contacts',
-    path: '/contacts',
-  },
-]
+import { links } from '@/data/common/commonData'
 
 const Nav: FC = () => {
   const pathname = usePathname()

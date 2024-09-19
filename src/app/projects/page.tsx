@@ -4,12 +4,10 @@ import { FC, useState } from 'react'
 
 import { motion } from 'framer-motion'
 import { SwiperClass } from 'swiper/react'
-
-import { allProjects } from '@/data/projects/projectsData'
-import { IProject } from '@/interfaces/interfaces'
-
 import ProjectsSlider from '@/components/projects/ProjectsSlider'
 import ProjectsInfo from '@/components/projects/ProjectsInfo'
+import { allProjects } from '@/data/projects/projectsData'
+import { IProject } from '@/interfaces/interfaces'
 import 'swiper/css'
 
 const Projects: FC = () => {

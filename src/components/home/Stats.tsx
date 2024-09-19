@@ -1,15 +1,8 @@
 'use client'
 
+import { stats } from '@/data/home/homeData'
 import { FC } from 'react'
 import CountUp from 'react-countup'
-import { IStat } from '@/interfaces/interfaces'
-
-const stats: IStat[] = [
-  { num: 1, text: 'Years of experience' },
-  { num: 3, text: 'Projects completed' },
-  { num: 8, text: 'Technologies mastered' },
-  { num: 500, text: 'Code commits' },
-]
 
 const Stats: FC = () => {
   return (
@@ -27,6 +20,7 @@ const Stats: FC = () => {
                 delay={2}
                 className="text-4xl xl:text-6xl font-extrabold"
               />
+
               <p
                 className={`${
                   item.text.length < 15 ? 'max-w-[100px]' : 'max-w-[150px]'

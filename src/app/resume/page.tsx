@@ -5,19 +5,6 @@ import dynamic from 'next/dynamic'
 import { motion } from 'framer-motion'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
-// const Experience = dynamic(() => import('@/components/resume/Experience'), {
-//   ssr: false,
-// })
-// const Education = dynamic(() => import('@/components/resume/Education'), {
-//   ssr: false,
-// })
-// const Skills = dynamic(() => import('@/components/resume/Skills'), {
-//   ssr: false,
-// })
-// const About = dynamic(() => import('@/components/resume/About'), {
-//   ssr: false,
-// })
-
 const Experience = dynamic(() => import('@/components/resume/Experience'))
 const Education = dynamic(() => import('@/components/resume/Education'))
 const Skills = dynamic(() => import('@/components/resume/Skills'))
