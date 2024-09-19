@@ -16,6 +16,8 @@ import {
   FaNodeJs,
 } from 'react-icons/fa'
 
+import BallCanvas from './Nodes'
+
 export const techIconMap = {
   FaHtml5: <FaHtml5 />,
   FaCss3: <FaCss3 />,
@@ -27,6 +29,73 @@ export const techIconMap = {
   SiNextdotjs: <SiNextdotjs />,
 }
 
+const technologies = [
+  {
+    name: 'HTML 5',
+    icon: '/assets/icons/tech/html.png',
+  },
+  {
+    name: 'CSS 3',
+    icon: '/assets/icons/tech/css.png',
+  },
+  {
+    name: 'JavaScript',
+    icon: '/assets/icons/tech/javascript.png',
+  },
+  // {
+  //   name: 'TypeScript',
+  //   icon: typescript,
+  // },
+  // {
+  //   name: 'React JS',
+  //   icon: reactjs,
+  // },
+  // {
+  //   name: 'Next JS',
+  //   icon: next,
+  // },
+  // {
+  //   name: 'Redux Toolkit',
+  //   icon: redux,
+  // },
+  // {
+  //   name: 'Node JS',
+  //   icon: nodejs,
+  // },
+  // {
+  //   name: 'MongoDB',
+  //   icon: mongodb,
+  // },
+  // {
+  //   name: 'Tailwind CSS',
+  //   icon: tailwind,
+  // },
+  // {
+  //   name: 'figma',
+  //   icon: figma,
+  // },
+  // {
+  //   name: 'git',
+  //   icon: git,
+  // },
+  // {
+  //   name: "Three JS",
+  //   icon: threejs,
+  // },
+  // {
+  //   name: "rest",
+  //   icon: rest,
+  // },
+  // {
+  //   name: "styledComponents",
+  //   icon: styledComponents,
+  // },
+  // {
+  //   name: "docker",
+  //   icon: docker,
+  // },
+]
+
 const Skills: FC = () => {
   return (
     <div className="flex flex-col gap-[30px]">
@@ -36,7 +105,7 @@ const Skills: FC = () => {
           {skills.description}
         </p>
       </div>
-      <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
+      {/* <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
         {skills.skillList.map((skill, index) => (
           <li key={index}>
             <TooltipProvider delayDuration={100}>
@@ -53,7 +122,16 @@ const Skills: FC = () => {
             </TooltipProvider>
           </li>
         ))}
-      </ul>
+      </ul> */}
+      <div>
+        <ul>
+          {technologies.map((item, index) => (
+            <li key={index}>
+              <BallCanvas icon={item.icon} />
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   )
 }
