@@ -1,5 +1,5 @@
 import { socialsIconMap } from '@/components/common/Socials'
-import { techIconMap } from '@/components/resume/Skills'
+// import { techIconMap } from '@/components/resume/Skills'
 import { contactsIconMap } from '@/components/contacts/ContactsList'
 
 export interface ILinkItem {
@@ -86,8 +86,14 @@ export interface ISkills {
 }
 
 interface ISkill {
-  icon: keyof typeof techIconMap
+  // icon: keyof typeof techIconMap
+  icon: string
   name: string
+}
+
+export interface ITechnology {
+  name: string
+  icon: string
 }
 
 // contacts

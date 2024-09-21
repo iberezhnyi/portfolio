@@ -1,100 +1,32 @@
 import { FC } from 'react'
-import { skills } from '@/data/resume/resumeData'
+import { skills, technologies } from '@/data/resume/resumeData'
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
-import { SiTailwindcss, SiNextdotjs } from 'react-icons/si'
-import {
-  FaHtml5,
-  FaCss3,
-  FaJs,
-  FaReact,
-  FaFigma,
-  FaNodeJs,
-} from 'react-icons/fa'
+// import { SiTailwindcss, SiNextdotjs } from 'react-icons/si'
+// import {
+//   FaHtml5,
+//   FaCss3,
+//   FaJs,
+//   FaReact,
+//   FaFigma,
+//   FaNodeJs,
+// } from 'react-icons/fa'
+import BallCanvas from './BallCanvas'
 
-import BallCanvas from './Nodes'
-
-export const techIconMap = {
-  FaHtml5: <FaHtml5 />,
-  FaCss3: <FaCss3 />,
-  FaJs: <FaJs />,
-  FaReact: <FaReact />,
-  FaFigma: <FaFigma />,
-  FaNodeJs: <FaNodeJs />,
-  SiTailwindcss: <SiTailwindcss />,
-  SiNextdotjs: <SiNextdotjs />,
-}
-
-const technologies = [
-  {
-    name: 'HTML 5',
-    icon: '/assets/icons/tech/html.png',
-  },
-  {
-    name: 'CSS 3',
-    icon: '/assets/icons/tech/css.png',
-  },
-  {
-    name: 'JavaScript',
-    icon: '/assets/icons/tech/javascript.png',
-  },
-  // {
-  //   name: 'TypeScript',
-  //   icon: typescript,
-  // },
-  // {
-  //   name: 'React JS',
-  //   icon: reactjs,
-  // },
-  // {
-  //   name: 'Next JS',
-  //   icon: next,
-  // },
-  // {
-  //   name: 'Redux Toolkit',
-  //   icon: redux,
-  // },
-  // {
-  //   name: 'Node JS',
-  //   icon: nodejs,
-  // },
-  // {
-  //   name: 'MongoDB',
-  //   icon: mongodb,
-  // },
-  // {
-  //   name: 'Tailwind CSS',
-  //   icon: tailwind,
-  // },
-  // {
-  //   name: 'figma',
-  //   icon: figma,
-  // },
-  // {
-  //   name: 'git',
-  //   icon: git,
-  // },
-  // {
-  //   name: "Three JS",
-  //   icon: threejs,
-  // },
-  // {
-  //   name: "rest",
-  //   icon: rest,
-  // },
-  // {
-  //   name: "styledComponents",
-  //   icon: styledComponents,
-  // },
-  // {
-  //   name: "docker",
-  //   icon: docker,
-  // },
-]
+// export const techIconMap = {
+//   FaHtml5: <FaHtml5 />,
+//   FaCss3: <FaCss3 />,
+//   FaJs: <FaJs />,
+//   FaReact: <FaReact />,
+//   FaFigma: <FaFigma />,
+//   FaNodeJs: <FaNodeJs />,
+//   SiTailwindcss: <SiTailwindcss />,
+//   SiNextdotjs: <SiNextdotjs />,
+// }
 
 const Skills: FC = () => {
   return (
@@ -105,6 +37,7 @@ const Skills: FC = () => {
           {skills.description}
         </p>
       </div>
+
       {/* <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
         {skills.skillList.map((skill, index) => (
           <li key={index}>
@@ -123,11 +56,24 @@ const Skills: FC = () => {
           </li>
         ))}
       </ul> */}
+
       <div>
-        <ul>
+        <ul className="grid grid-cols-2 lg:grid-cols-5 gap-[10px]">
           {technologies.map((item, index) => (
             <li key={index}>
-              <BallCanvas icon={item.icon} />
+              <TooltipProvider delayDuration={100}>
+                <Tooltip>
+                  <TooltipTrigger className="w-full h-[150px] flex justify-center items-center group">
+                    <div className="text-6xl group-hover:text-accent transition-all duration-300">
+                      <BallCanvas icon={item.icon} />
+                    </div>
+                  </TooltipTrigger>
+
+                  <TooltipContent>
+                    <p className="capitalize">{item.name}</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
             </li>
           ))}
         </ul>
