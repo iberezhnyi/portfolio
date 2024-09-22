@@ -10,15 +10,11 @@ const Ball: FC<BallProps> = ({ imgUrl }) => {
 
   return (
     <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
-      {/* <ambientLight intensity={0.25} /> */}
       <directionalLight position={[0, 0, 0.05]} />
       <mesh castShadow receiveShadow scale={2.75}>
         <icosahedronGeometry args={[1, 1]} />
         <meshStandardMaterial
-          //   color="#fff8eb"
           color="#3da5b7"
-          //   color="#3d4bb7"
-          //   color="#1C1C22"
           polygonOffset
           polygonOffsetFactor={-5}
           flatShading
@@ -29,7 +25,6 @@ const Ball: FC<BallProps> = ({ imgUrl }) => {
           rotation={[2 * Math.PI, 0, 6.25]}
           scale={1}
           map={decal}
-          // flatShading
         />
       </mesh>
     </Float>

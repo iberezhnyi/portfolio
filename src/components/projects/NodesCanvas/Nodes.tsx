@@ -7,8 +7,8 @@ import { QuadraticBezierLine } from '@react-three/drei'
 
 import { Vector3 } from 'three'
 import Circle from './Circle'
+import SceneCleanup from '@/components/common/SceneCleanup'
 
-// Типизация контекста
 interface NodeState {
   position: THREE.Vector3
   connectedTo: React.RefObject<THREE.Mesh>[]
@@ -17,7 +17,6 @@ interface NodeState {
 type NodeContextType = React.Dispatch<React.SetStateAction<NodeState[]>>
 export const context = createContext<NodeContextType | undefined>(undefined)
 
-// Типизация для Nodes компонента
 interface NodesProps {
   children: ReactNode
 }
@@ -29,33 +28,6 @@ function Nodes({ children }: NodesProps) {
   const lines = useMemo(() => {
     const lines: { start: Vector3; end: Vector3 }[] = []
     for (const node of nodes) {
-      //   node.connectedTo
-      //     .map((ref) => [node.position, ref.current.position])
-      //     .forEach(([start, end]) =>
-      //       lines.push({
-      //         start: start.clone().add(new THREE.Vector3(0.35, 0, 0)),
-      //         end: end.clone().add(new THREE.Vector3(-0.35, 0, 0)),
-      //       }),
-      //     )
-
-      // ______________________________________________________________________
-
-      //   node.connectedTo
-      //     .map((ref) =>
-      //       ref.current ? [node.position, ref.current.position] : null,
-      //     )
-      //     .filter(Boolean) // убираем null значения
-      //     .forEach(([start, end]) => {
-      //       if (start && end) {
-      //         lines.push({
-      //           start: start.clone().add(new THREE.Vector3(0.35, 0, 0)),
-      //           end: end.clone().add(new THREE.Vector3(-0.35, 0, 0)),
-      //         })
-      //       }
-      //     })
-
-      // _____________________________________________________________________________
-
       node.connectedTo
         .map((ref) =>
           ref.current ? [node.position, ref.current.position] : null,
@@ -73,31 +45,19 @@ function Nodes({ children }: NodesProps) {
 
   useFrame((_, delta) => {
     if (group.current) {
-      //   group.current.children.forEach((group) => {
-      //     if (group.children[0].material?.uniforms?.dashOffset) {
-      //       group.children[0].material.uniforms.dashOffset.value -= delta * 10
-      //     }
-      //   })
-
-      // ________________________________________________________________________
-
       group.current.children.forEach((child) => {
-        const mesh = child as THREE.Mesh
-        if (mesh.material && mesh.material.uniforms?.dashOffset) {
-          mesh.material.uniforms.dashOffset.value -= delta * 10
-        }
+        const lineGroup = child as THREE.Group
+
+        lineGroup.children.forEach((lineChild) => {
+          const lineMesh = lineChild as THREE.Mesh
+
+          const material = lineMesh.material as THREE.ShaderMaterial
+
+          if (material && material.uniforms && material.uniforms.dashOffset) {
+            material.uniforms.dashOffset.value -= delta * 10
+          }
+        })
       })
-
-      // __________________________________________________________________________________
-
-      //   group.current.children.forEach((child) => {
-      //     const mesh = child as THREE.Mesh
-      //     const material = mesh.material as THREE.ShaderMaterial // Приведение к ShaderMaterial
-
-      //     if (material.uniforms?.dashOffset) {
-      //       material.uniforms.dashOffset.value -= delta * 10
-      //     }
-      //   })
     }
   })
 
@@ -108,16 +68,16 @@ function Nodes({ children }: NodesProps) {
           <group key={index}>
             <QuadraticBezierLine
               {...line}
-              // color="white"
-              color="#3d4bb7"
+              // color="#3d4bb7"
+              color="white"
               dashed
               dashScale={50}
               gapSize={20}
             />
             <QuadraticBezierLine
               {...line}
-              // color="white"
-              color="#3d4bb7"
+              // color="#3d4bb7"
+              color="white"
               lineWidth={0.5}
               transparent
               opacity={0.1}
@@ -126,6 +86,9 @@ function Nodes({ children }: NodesProps) {
         ))}
       </group>
       {children}
+
+      <SceneCleanup />
+
       {lines.map(({ start, end }, index) => (
         <group key={index} position-z={1}>
           <Circle position={start} />

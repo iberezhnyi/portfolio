@@ -1,13 +1,13 @@
-import { FC, Suspense } from 'react'
+import { FC, ReactNode, Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Preload } from '@react-three/drei'
-import Ball from './Ball'
+import SceneCleanup from '../common/SceneCleanup'
 
 interface BallCanvasProps {
-  icon: string
+  children: ReactNode
 }
 
-const BallCanvas: FC<BallCanvasProps> = ({ icon }) => {
+const BallCanvas: FC<BallCanvasProps> = ({ children }) => {
   return (
     <Canvas
       frameloop="always"
@@ -24,9 +24,10 @@ const BallCanvas: FC<BallCanvasProps> = ({ icon }) => {
         }
       >
         <OrbitControls enableZoom={false} />
-        <Ball imgUrl={icon} />
+        {children}
       </Suspense>
 
+      <SceneCleanup />
       <Preload all />
     </Canvas>
   )

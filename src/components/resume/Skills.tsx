@@ -16,6 +16,7 @@ import {
 //   FaNodeJs,
 // } from 'react-icons/fa'
 import BallCanvas from './BallCanvas'
+import Ball from './Ball'
 
 // export const techIconMap = {
 //   FaHtml5: <FaHtml5 />,
@@ -57,27 +58,27 @@ const Skills: FC = () => {
         ))}
       </ul> */}
 
-      <div>
-        <ul className="grid grid-cols-2 lg:grid-cols-5 gap-[10px]">
-          {technologies.map((item, index) => (
-            <li key={index}>
-              <TooltipProvider delayDuration={100}>
-                <Tooltip>
-                  <TooltipTrigger className="w-full h-[150px] flex justify-center items-center group">
-                    <div className="text-6xl group-hover:text-accent transition-all duration-300">
-                      <BallCanvas icon={item.icon} />
-                    </div>
-                  </TooltipTrigger>
+      <ul className="grid grid-cols-2 lg:grid-cols-5 gap-[10px]">
+        {technologies.map((item, index) => (
+          <li key={index}>
+            <TooltipProvider delayDuration={100}>
+              <Tooltip>
+                <TooltipTrigger className="w-full h-[150px] flex justify-center items-center group">
+                  <div className="text-6xl group-hover:text-accent transition-all duration-300">
+                    <BallCanvas>
+                      <Ball imgUrl={item.icon} />
+                    </BallCanvas>
+                  </div>
+                </TooltipTrigger>
 
-                  <TooltipContent>
-                    <p className="capitalize">{item.name}</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-            </li>
-          ))}
-        </ul>
-      </div>
+                <TooltipContent>
+                  <p className="capitalize">{item.name}</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }

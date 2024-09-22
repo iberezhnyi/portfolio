@@ -29,6 +29,7 @@ const Photo: FC = () => {
             fill
             alt=""
             className="object-contain"
+            sizes="(max-width: 1200px) 33vw, 50vw"
           />
         </motion.div>
 

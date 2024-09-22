@@ -82,7 +82,12 @@ const ProjectsInfo: FC<ProjectsInfoProps> = ({ currentProject }) => {
           </ul>
         ) : (
           <div>
-            <Canvas key={currentProject.num} orthographic camera={{ zoom: 80 }}>
+            <Canvas
+              style={{ touchAction: 'none' }}
+              key={currentProject.num}
+              orthographic
+              camera={{ zoom: 80 }}
+            >
               <Nodes>
                 {nodeRefs.map((ref, index) => {
                   const stackItem = currentProject.stack[index]

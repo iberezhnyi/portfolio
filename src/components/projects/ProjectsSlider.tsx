@@ -34,6 +34,7 @@ const ProjectsSlider: FC<ProjectSliderProps> = ({
                   fill
                   className="object-cover"
                   alt=""
+                  sizes="(max-width: 1200px) 100vw, 50vw"
                 />
               </div>
             </div>
