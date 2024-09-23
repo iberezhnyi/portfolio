@@ -30,6 +30,7 @@ interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean
+  disabled?: boolean
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
