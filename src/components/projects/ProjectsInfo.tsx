@@ -1,12 +1,9 @@
 'use client'
 
-import { useState, createRef, FC, useEffect } from 'react'
+import { useState, FC, useEffect } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import Link from 'next/link'
-import * as THREE from 'three'
-import { Canvas } from '@react-three/fiber'
-import Nodes from './NodesCanvas/Nodes'
-import Node from './NodesCanvas/Node'
+
 import {
   Tooltip,
   TooltipContent,
@@ -14,7 +11,6 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip'
 import {
-  getRandomPosition,
   availablePositionsXL,
   availablePositionsLG,
   availablePositionsMD,
@@ -23,6 +19,7 @@ import {
 } from '@/helpers/getRandomPosition'
 import { BsArrowUpRight, BsGithub } from 'react-icons/bs'
 import { IProject } from '@/interfaces/interfaces'
+import NodesCanvas from './NodesCanvas/NodesCanvas'
 
 interface ProjectsInfoProps {
   currentProject: IProject
@@ -32,9 +29,6 @@ const ProjectsInfo: FC<ProjectsInfoProps> = ({ currentProject }) => {
   const [availablePositions, setAvailablePositions] = useState<
     [number, number][]
   >([])
-  const nodeRefs = useState(() =>
-    currentProject.stack.map(() => createRef<THREE.Mesh>()),
-  )[0]
 
   const isXL = useMediaQuery({ minWidth: 1200 })
   const isLG = useMediaQuery({ minWidth: 960, maxWidth: 1199 })
@@ -58,8 +52,6 @@ const ProjectsInfo: FC<ProjectsInfoProps> = ({ currentProject }) => {
     }
   }, [isXL, isLG, isMD, isSM, isXS])
 
-  const positionsCopy = [...availablePositions]
-
   return (
     <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
       <div className="flex flex-col gap-[30px] h-[50%]">
@@ -82,65 +74,46 @@ const ProjectsInfo: FC<ProjectsInfoProps> = ({ currentProject }) => {
           </ul>
         ) : (
           <div>
-            <Canvas
-              style={{ touchAction: 'none' }}
-              key={currentProject.num}
-              orthographic
-              camera={{ zoom: 80 }}
-            >
-              <Nodes>
-                {nodeRefs.map((ref, index) => {
-                  const stackItem = currentProject.stack[index]
-
-                  if (!stackItem) return null
-
-                  const [x, y] = getRandomPosition(positionsCopy)
-
-                  return (
-                    <Node
-                      key={index}
-                      ref={ref}
-                      name={stackItem.name}
-                      color={'#3da5b7'}
-                      position={[x, y, 0]}
-                      connectedTo={nodeRefs.filter((_, i) => i !== index)}
-                    />
-                  )
-                })}
-              </Nodes>
-            </Canvas>
+            <NodesCanvas
+              currentProject={currentProject}
+              availablePositions={availablePositions}
+            />
           </div>
         )}
         <div className="border border-white/20"></div>
-        <div className="flex items-center gap-4">
-          <Link href={currentProject.live}>
-            <TooltipProvider delayDuration={100}>
-              <Tooltip>
-                <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                  <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
-                </TooltipTrigger>
+        <ul className="flex items-center gap-4">
+          <li>
+            <Link href={currentProject.live}>
+              <TooltipProvider delayDuration={100}>
+                <Tooltip>
+                  <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                    <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
+                  </TooltipTrigger>
 
-                <TooltipContent>
-                  <p>Live project</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </Link>
+                  <TooltipContent>
+                    <p>Live project</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+            </Link>
+          </li>
 
-          <Link href={currentProject.github}>
-            <TooltipProvider delayDuration={100}>
-              <Tooltip>
-                <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                  <BsGithub className="text-white text-3xl group-hover:text-accent" />
-                </TooltipTrigger>
+          <li>
+            <Link href={currentProject.github}>
+              <TooltipProvider delayDuration={100}>
+                <Tooltip>
+                  <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                    <BsGithub className="text-white text-3xl group-hover:text-accent" />
+                  </TooltipTrigger>
 
-                <TooltipContent>
-                  <p>Github repository</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </Link>
-        </div>
+                  <TooltipContent>
+                    <p>Github repository</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+            </Link>
+          </li>
+        </ul>
       </div>
     </div>
   )

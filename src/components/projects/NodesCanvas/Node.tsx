@@ -87,7 +87,11 @@ const Node = forwardRef<THREE.Mesh, NodeProps>(
           onPointerOut={() => setHovered(false)}
           color={hovered ? '#3d4bb7' : color}
         >
-          <Text position={[0, 0.3, 1]} fontSize={isXS ? 0.13 : 0.16}>
+          <Text
+            position={[0, 0.3, 1]}
+            fontSize={isXS ? 0.13 : 0.16}
+            color={hovered ? '#3d4bb7' : '#3da5b7'}
+          >
             {name}
           </Text>
         </Circle>

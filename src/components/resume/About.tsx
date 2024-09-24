@@ -3,7 +3,7 @@ import { FC } from 'react'
 
 const About: FC = () => {
   return (
-    <div className="flex flex-col gap-[30px]">
+    <section className="flex flex-col gap-[30px]">
       <h3 className="text-4xl font-bold">{about.title}</h3>
       <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
         {about.description}
@@ -19,7 +19,7 @@ const About: FC = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   )
 }
 

@@ -9,18 +9,19 @@ const Nav: FC = () => {
   const pathname = usePathname()
 
   return (
-    <nav className="flex gap-8">
-      {links.map((link, index) => (
-        <Link
-          className={`${
-            link.path === pathname && 'text-accent border-b-2 border-accent'
-          } capitalize font-medium hover:text-accent transition-all`}
-          href={link.path}
-          key={index}
-        >
-          {link.name}
-        </Link>
-      ))}
+    <nav>
+      <ul className="flex gap-8">
+        {links.map((link, index) => (
+          <li
+            key={index}
+            className={`${
+              link.path === pathname && 'text-accent border-b-2 border-accent'
+            } capitalize font-medium hover:text-accent transition-all`}
+          >
+            <Link href={link.path}>{link.name}</Link>
+          </li>
+        ))}
+      </ul>
     </nav>
   )
 }

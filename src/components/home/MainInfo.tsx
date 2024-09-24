@@ -1,5 +1,4 @@
 import { FC } from 'react'
-import { Button } from '@/components/ui/button'
 import Socials from '../common/Socials'
 import { FiDownload } from 'react-icons/fi'
 
@@ -17,14 +16,14 @@ const MainInfo: FC = () => {
       </p>
 
       <div className="flex flex-col xl:flex-row items-center gap-8">
-        <Button
-          variant="outline"
-          size="lg"
-          className="uppercase flex items-center gap-2"
+        <a
+          href="/assets/cv/Ihor_Berezhnyi_Full_Stack_Developer.pdf"
+          download
+          className="inline-flex items-center justify-center whitespace-nowrap rounded-full text-base font-semibold ring-offset-white transition-colors uppercase gap-2 border border-accent bg-transparent text-accent hover:bg-accent hover:text-primary h-[56px] px-8 tracking-[2px]"
         >
           <span>Download CV</span>
           <FiDownload className="text-xl" />
-        </Button>
+        </a>
         <div className="mb-8 xl:mb-0">
           <Socials
             containerStyles="flex gap-6"

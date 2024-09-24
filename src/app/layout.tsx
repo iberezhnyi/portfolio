@@ -29,7 +29,9 @@ const RootLayout: FC<Readonly<RootLayoutProps>> = ({ children }) => {
 
         <StairsTransition />
 
-        <PageTransition>{children}</PageTransition>
+        <PageTransition>
+          <main className="h-full">{children}</main>
+        </PageTransition>
       </body>
     </html>
   )

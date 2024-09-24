@@ -18,18 +18,28 @@ const Resume: FC = () => {
         opacity: 1,
         transition: { delay: 2.4, duration: 0.4, ease: 'easeIn' },
       }}
-      className="flex items-center justify-center py-12 xl:py-0"
+      className="flex py-12 xl:py-0"
     >
       <div className="container mx-auto">
         <Tabs
           defaultValue="experience"
-          className="flex flex-col xl:flex-row gap-[60px]"
+          className="flex flex-col xl:flex-row gap-[60px] max-xl:items-center"
         >
-          <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
-            <TabsTrigger value="experience">Experience</TabsTrigger>
-            <TabsTrigger value="education">Education</TabsTrigger>
-            <TabsTrigger value="skills">Skills</TabsTrigger>
-            <TabsTrigger value="about">About me</TabsTrigger>
+          <TabsList className="w-full max-w-[380px]">
+            <ul className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
+              <li>
+                <TabsTrigger value="experience">Experience</TabsTrigger>
+              </li>
+              <li>
+                <TabsTrigger value="education">Education</TabsTrigger>
+              </li>
+              <li>
+                <TabsTrigger value="skills">Skills</TabsTrigger>
+              </li>
+              <li>
+                <TabsTrigger value="about">About me</TabsTrigger>
+              </li>
+            </ul>
           </TabsList>
 
           <div className="min-h-[70vh] w-full">
@@ -59,3 +69,24 @@ const Resume: FC = () => {
 }
 
 export default Resume
+
+// <Tabs
+//   defaultValue="experience"
+//   className="flex flex-col xl:flex-row gap-[60px]"
+// >
+//   <TabsList className="w-full max-w-[380px] mx-auto xl:mx-0">
+//     <ul className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
+//       <li>
+//         <TabsTrigger value="experience">Experience</TabsTrigger>
+//       </li>
+//       <li>
+//         <TabsTrigger value="education">Education</TabsTrigger>
+//       </li>
+//       <li>
+//         <TabsTrigger value="skills">Skills</TabsTrigger>
+//       </li>
+//       <li>
+//         <TabsTrigger value="about">About me</TabsTrigger>
+//       </li>
+//     </ul>
+//   </TabsList>

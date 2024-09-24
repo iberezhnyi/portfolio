@@ -9,9 +9,9 @@ import { BsArrowDownRight } from 'react-icons/bs'
 
 const Services: FC = () => {
   return (
-    <section className="min-h-[80vh] flex flex-col justify-center py-12 xl:py-0">
+    <div className="min-h-[80vh] flex flex-col justify-center py-12 xl:py-0">
       <div className="container mx-auto">
-        <motion.div
+        <motion.section
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
@@ -49,9 +49,9 @@ const Services: FC = () => {
               </li>
             ))}
           </ul>
-        </motion.div>
+        </motion.section>
       </div>
-    </section>
+    </div>
   )
 }
 

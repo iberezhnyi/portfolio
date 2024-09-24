@@ -21,17 +21,19 @@ const Socials: FC<SocialsProps> = ({
   iconStyles,
 }) => {
   return (
-    <div className={containerStyles}>
+    <ul className={containerStyles}>
       {socials.map((item, index) => (
-        <Link key={index} href={item.path} className={linkStyles}>
-          {/* {socialsIconMap[item.icon]} */}
+        <li key={index}>
+          <Link href={item.path} className={linkStyles}>
+            {/* {socialsIconMap[item.icon]} */}
 
-          {cloneElement(socialsIconMap[item.icon], {
-            className: iconStyles,
-          })}
-        </Link>
+            {cloneElement(socialsIconMap[item.icon], {
+              className: iconStyles,
+            })}
+          </Link>
+        </li>
       ))}
-    </div>
+    </ul>
   )
 }
 

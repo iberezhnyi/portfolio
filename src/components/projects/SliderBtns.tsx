@@ -18,15 +18,19 @@ const SliderBtns: FC<SliderBtnsProps> = ({
   const swiper = useSwiper()
 
   return (
-    <div className={containerStyles}>
-      <button className={btnStyles} onClick={() => swiper.slidePrev()}>
-        <PiCaretLeftBold className={iconStyles} />
-      </button>
+    <ul className={containerStyles}>
+      <li>
+        <button className={btnStyles} onClick={() => swiper.slidePrev()}>
+          <PiCaretLeftBold className={iconStyles} />
+        </button>
+      </li>
 
-      <button className={btnStyles} onClick={() => swiper.slideNext()}>
-        <PiCaretRightBold className={iconStyles} />
-      </button>
-    </div>
+      <li>
+        <button className={btnStyles} onClick={() => swiper.slideNext()}>
+          <PiCaretRightBold className={iconStyles} />
+        </button>
+      </li>
+    </ul>
   )
 }
 

@@ -85,6 +85,7 @@ function Nodes({ children }: NodesProps) {
           </group>
         ))}
       </group>
+
       {children}
 
       <SceneCleanup />
