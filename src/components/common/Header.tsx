@@ -14,14 +14,14 @@ const Header: FC = () => {
   return (
     <header className="py-8 xl:py-12 text-white">
       <div className="container mx-auto flex justify-between items-center">
-        <Link href="/" className="hover:text-accent transition-all group">
-          <h1 className="text-4xl font-semibold">
+        <div className="text-4xl font-semibold">
+          <Link href="/" className="hover:text-accent transition-all group">
             iberezhnyi
             <span className="text-accent group-hover:text-white transition-all">
               .
             </span>
-          </h1>
-        </Link>
+          </Link>
+        </div>
 
         <div className="hidden xl:flex items-center gap-8">
           <Nav />

@@ -1,10 +1,12 @@
 import { FC, ReactNode } from 'react'
 import type { Metadata } from 'next'
 import { JetBrains_Mono } from 'next/font/google'
-import Header from '@/components/common/Header'
-import PageTransition from '@/components/common/PageTransition'
-import StairsTransition from '@/components/common/StairsTransition'
+// import Header from '@/components/common/Header'
+// import PageTransition from '@/components/common/PageTransition'
+// import StairsTransition from '@/components/common/StairsTransition'
+// import { SnackbarProvider } from 'notistack'
 import './globals.css'
+import ClientLayout from './ClientLayout'
 
 const jetBrainsMono = JetBrains_Mono({
   subsets: ['latin'],
@@ -25,13 +27,17 @@ const RootLayout: FC<Readonly<RootLayoutProps>> = ({ children }) => {
   return (
     <html lang="en">
       <body className={jetBrainsMono.variable}>
-        <Header />
+        <ClientLayout>{children}</ClientLayout>
 
-        <StairsTransition />
+        {/* <Header /> */}
 
-        <PageTransition>
-          <main className="h-full">{children}</main>
-        </PageTransition>
+        {/* <StairsTransition /> */}
+
+        {/* <PageTransition> */}
+        {/* <SnackbarProvider maxSnack={3}> */}
+        {/* <main className="h-full">{children}</main> */}
+        {/* </SnackbarProvider> */}
+        {/* </PageTransition> */}
       </body>
     </html>
   )

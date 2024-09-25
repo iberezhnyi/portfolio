@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import Tilt from 'react-parallax-tilt'
 import { services } from '@/data/services/servicesData'
 import { BsArrowDownRight } from 'react-icons/bs'
+import { VisuallyHidden } from '@radix-ui/react-visually-hidden'
 
 const Services: FC = () => {
   return (
@@ -18,6 +19,10 @@ const Services: FC = () => {
             transition: { delay: 2.4, duration: 0.4, ease: 'easeIn' },
           }}
         >
+          <VisuallyHidden>
+            <h1>Professional services we provide</h1>
+          </VisuallyHidden>
+
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-[60px]">
             {services.map((item, index) => (
               <li
@@ -56,14 +61,3 @@ const Services: FC = () => {
 }
 
 export default Services
-
-// <Tilt>
-//   <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
-//     <li className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
-//       <h1>React Parallax Tilt 👀</h1>
-//     </li>
-//     <li className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1">
-//       <h1>React Parallax Tilt 👀</h1>
-//     </li>
-//   </ul>
-// </Tilt>

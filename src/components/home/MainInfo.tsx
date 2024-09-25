@@ -5,11 +5,11 @@ import { FiDownload } from 'react-icons/fi'
 const MainInfo: FC = () => {
   return (
     <div className="text-center xl:text-left order-2 xl:order-none">
-      <span className="text-xl">Full-Stack Developer</span>
-      <h1 className="h1 mb-6">
+      <h2 className="text-xl">Full-Stack Developer</h2>
+      <div className="h1 mb-6">
         Hello I&apos;m
         <br /> <span className="text-accent">Ihor Berezhnyi</span>
-      </h1>
+      </div>
       <p className="max-w-[500px] mb-9 text-white/80">
         Crafting polished and impactful digital experiences is my forte, backed
         by extensive knowledge in diverse programming technologies.

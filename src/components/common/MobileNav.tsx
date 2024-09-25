@@ -35,18 +35,18 @@ const MobileNav: FC = () => {
         </SheetHeader>
 
         <div className="mt-32 mb-10 text-center text-2xl">
-          <Link
-            href="/"
-            onClick={closeMenu}
-            className="hover:text-accent transition-all group"
-          >
-            <h1 className="text-4xl font-semibold">
+          <div className="text-4xl font-semibold">
+            <Link
+              href="/"
+              onClick={closeMenu}
+              className="hover:text-accent transition-all group"
+            >
               iberezhnyi
               <span className="text-accent group-hover:text-white transition-all">
                 .
               </span>
-            </h1>
-          </Link>
+            </Link>
+          </div>
         </div>
 
         <nav>

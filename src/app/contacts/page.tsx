@@ -4,19 +4,19 @@ import { FC } from 'react'
 import { motion } from 'framer-motion'
 import ContactForm from '@/components/contacts/ContactForm'
 import ContactsList from '@/components/contacts/ContactsList'
+import { VisuallyHidden } from '@radix-ui/react-visually-hidden'
 
 export interface ContactFormData {
   firstname: string
   lastname: string
   email: string
   phone: string
-  service: string
+  // service: string
   message: string
 }
 
 const Contacts: FC = () => {
-  const onSubmit = async (formData: ContactFormData) => {
-    console.log('formData :>> ', formData)
+  const onSubmit = async (formData: ContactFormData): Promise<boolean> => {
     try {
       const response = await fetch('/api/mail', {
         method: 'POST',
@@ -24,14 +24,17 @@ const Contacts: FC = () => {
         body: JSON.stringify(formData),
       })
 
-      if (response.ok) {
-        console.log('Message sent!')
-      }
-      // else {
-      // console.log('Failed to send message.')
+      // if (response.ok) {
+      //   return true
+      // } else {
+      //   return false
       // }
+
+      return Boolean(response.ok)
     } catch (error) {
-      console.log('Something went wrong.')
+      console.error('Something went wrong:', error)
+
+      return false
     }
   }
 
@@ -45,6 +48,10 @@ const Contacts: FC = () => {
       className="py-6"
     >
       <div className="container mx-auto">
+        <VisuallyHidden>
+          <h1>Reach Out for Collaboration</h1>
+        </VisuallyHidden>
+
         <div className="flex flex-col xl:flex-row gap-[30px]">
           <ContactForm onSubmit={onSubmit} />
 

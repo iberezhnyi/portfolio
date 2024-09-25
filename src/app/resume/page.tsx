@@ -4,6 +4,7 @@ import { FC } from 'react'
 import dynamic from 'next/dynamic'
 import { motion } from 'framer-motion'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { VisuallyHidden } from '@radix-ui/react-visually-hidden'
 
 const Experience = dynamic(() => import('@/components/resume/Experience'))
 const Education = dynamic(() => import('@/components/resume/Education'))
@@ -21,6 +22,10 @@ const Resume: FC = () => {
       className="flex py-12 xl:py-0"
     >
       <div className="container mx-auto">
+        <VisuallyHidden>
+          <h1>Professional Experience and Skills of Ihor Berezhnyi</h1>
+        </VisuallyHidden>
+
         <Tabs
           defaultValue="experience"
           className="flex flex-col xl:flex-row gap-[60px] max-xl:items-center"

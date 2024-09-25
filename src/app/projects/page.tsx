@@ -8,6 +8,7 @@ import ProjectsSlider from '@/components/projects/ProjectsSlider'
 import ProjectsInfo from '@/components/projects/ProjectsInfo'
 import { allProjects } from '@/data/projects/projectsData'
 import { IProject } from '@/interfaces/interfaces'
+import { VisuallyHidden } from '@radix-ui/react-visually-hidden'
 import 'swiper/css'
 
 const Projects: FC = () => {
@@ -29,6 +30,10 @@ const Projects: FC = () => {
       className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
     >
       <div className="container mx-auto">
+        <VisuallyHidden>
+          <h1>Explore My Web Development Projects</h1>
+        </VisuallyHidden>
+
         <div className="flex flex-col xl:flex-row xl:gap-[30px]">
           <ProjectsInfo currentProject={currentProject} />
 
