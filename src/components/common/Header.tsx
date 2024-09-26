@@ -31,7 +31,6 @@ const Header: FC = () => {
             className={`${cn(pathname === '/contacts' && 'bg-accent-hover')} h-[44px] px-6 bg-accent text-primary hover:bg-accent-hover inline-flex items-center justify-center whitespace-nowrap rounded-full text-base font-semibold ring-offset-white transition-colors`}
           >
             Hire me
-            {/* <Button type="button">Hire me</Button> */}
           </Link>
         </div>
 

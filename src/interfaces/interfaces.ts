@@ -32,11 +32,17 @@ export interface IProject {
   num: string
   category: string
   title: string
+  team: boolean
   description: string
   stack: IStack[]
   image: string
   live: string
-  github: string
+  github: IGithubLinks
+}
+
+interface IGithubLinks {
+  frontend?: string
+  backend?: string
 }
 
 interface IStack {
@@ -101,4 +107,5 @@ export interface IContactInfoItem {
   icon: keyof typeof contactsIconMap
   title: string
   description: string
+  href: string
 }

@@ -61,6 +61,8 @@ const ContactForm: FC<ContactFormProps> = ({ onSubmit }) => {
       setIsSubmitting(false)
     } else {
       enqueueSnackbar('Error sending message.', { variant: 'error' })
+
+      setIsSubmitting(false)
     }
   }
 

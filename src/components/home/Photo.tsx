@@ -27,7 +27,7 @@ const Photo: FC = () => {
             priority
             quality={100}
             fill
-            alt=""
+            alt="Photo of Ihor Berezhnyi, Full-Stack Developer"
             className="object-contain"
             sizes="(max-width: 1200px) 33vw, 50vw"
           />

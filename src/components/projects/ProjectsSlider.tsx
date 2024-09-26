@@ -9,7 +9,7 @@ interface ProjectSliderProps {
   currentProject: IProject
   onSlideChange: (swiper: SwiperClass) => void
 }
-
+// xl:mt-6
 const ProjectsSlider: FC<ProjectSliderProps> = ({
   allProjects,
   currentProject,
@@ -20,7 +20,7 @@ const ProjectsSlider: FC<ProjectSliderProps> = ({
       <Swiper
         spaceBetween={30}
         slidesPerView={1}
-        className="xl:h-[520px] mb-12"
+        className="xl:h-[520px] mb-12 xl:mt-4"
         onSlideChange={onSlideChange}
       >
         {allProjects.map((item, index) => (
@@ -34,7 +34,7 @@ const ProjectsSlider: FC<ProjectSliderProps> = ({
                   fill
                   className="object-cover"
                   alt=""
-                  sizes="(max-width: 1200px) 100vw, 50vw"
+                  // sizes="(max-width: 1200px) 100vw, 50vw"
                 />
               </div>
             </div>

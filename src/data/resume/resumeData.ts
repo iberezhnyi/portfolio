@@ -178,6 +178,11 @@ export const technologies: ITechnology[] = [
   //   icon: '/assets/icons/tech/threejs.svg',
   // },
 
+  // {
+  //   name: 'express',
+  //   icon: '/assets/icons/tech/express.png',
+  // },
+
   {
     name: 'rest',
     icon: '/assets/icons/tech/rest.png',

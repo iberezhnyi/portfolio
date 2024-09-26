@@ -5,13 +5,13 @@ export const services: IService[] = [
     num: '01',
     title: 'Frontend',
     description: 'Frontend for the application component of the Internet',
-    href: '',
+    href: '/projects',
   },
 
   {
     num: '02',
     title: 'Backend',
     description: 'Frontend for the application component of the Internet',
-    href: '',
+    href: '/projects',
   },
 ]

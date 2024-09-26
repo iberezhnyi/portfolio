@@ -16,7 +16,7 @@ const Nav: FC = () => {
             key={index}
             className={`${
               link.path === pathname && 'text-accent border-b-2 border-accent'
-            } capitalize font-medium hover:text-accent transition-all`}
+            } capitalize font-medium hover:text-accent transition-all cursor-pointer`}
           >
             <Link href={link.path}>{link.name}</Link>
           </li>

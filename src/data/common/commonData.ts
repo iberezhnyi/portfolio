@@ -28,7 +28,7 @@ export const links: ILinkItem[] = [
 ]
 
 export const socials: ISocial[] = [
-  { icon: 'FaGithub', path: '' },
-  { icon: 'FaLinkedinIn', path: '' },
-  { icon: 'FaTelegram', path: '' },
+  { icon: 'FaGithub', path: 'https://github.com/iberezhnyi' },
+  { icon: 'FaLinkedinIn', path: 'https://www.linkedin.com/in/ihor-berezhnyi/' },
+  { icon: 'FaTelegram', path: 'https://t.me/iberezhnyi' },
 ]

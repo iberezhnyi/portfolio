@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import { contactInfo } from '@/data/contacts/contactsData'
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
+import Link from 'next/link'
 
 export const contactsIconMap = {
   FaPhoneAlt: <FaPhoneAlt />,
@@ -10,7 +11,7 @@ export const contactsIconMap = {
 
 const ContactsList: FC = () => {
   return (
-    <div className="flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0">
+    <address className="flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0 not-italic">
       <ul className="flex flex-col gap-10">
         {contactInfo.map((item, index) => (
           <li key={index} className="flex items-center gap-6">
@@ -19,12 +20,19 @@ const ContactsList: FC = () => {
             </div>
             <div className="flex-1">
               <p className="text-white/60">{item.title}</p>
-              <h3 className="text-xl">{item.description}</h3>
+              <Link
+                href={item.href}
+                className="text-xl hover:text-accent transition-all"
+                target="_blank"
+                rel="noopener nofollow noreferrer"
+              >
+                {item.description}
+              </Link>
             </div>
           </li>
         ))}
       </ul>
-    </div>
+    </address>
   )
 }
 
