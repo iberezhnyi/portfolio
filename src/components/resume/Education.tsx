@@ -14,16 +14,26 @@ const Education: FC = () => {
           {education.items.map((item, index) => (
             <li
               key={index}
-              className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+              className="bg-[#232329] py-6 px-10 rounded-xl flex flex-col items-center lg:items-start gap-1"
             >
               <span className="text-accent">{item.duration}</span>
-              <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">
+
+              <h3 className="text-2xl max-w-[260px] mb-4 text-center lg:text-left text-white/60">
                 {item.degree}
               </h3>
-              <div className="flex items-center gap-3">
-                <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                <p className="text-white/60">{item.institution}</p>
-              </div>
+
+              <p className="">{item.institution}</p>
+
+              <ul className="list-disc list-inside">
+                {item.description.map((descItem, index) => (
+                  <li
+                    key={index}
+                    className="marker:w-[6px] marker:h-[6px] marker:text-accent marker:text-base"
+                  >
+                    <p className="text-white/60 inline">{descItem}</p>
+                  </li>
+                ))}
+              </ul>
             </li>
           ))}
         </ul>

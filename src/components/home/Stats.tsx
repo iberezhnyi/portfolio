@@ -14,12 +14,19 @@ const Stats: FC = () => {
             className="flex-1 flex gap-4 items-center justify-center xl:justify-start"
             key={index}
           >
-            <CountUp
-              end={item.num}
-              duration={5}
-              delay={2}
-              className="text-4xl xl:text-6xl font-extrabold"
-            />
+            <div className="flex items-center">
+              <CountUp
+                end={item.num}
+                duration={5}
+                delay={2}
+                className="text-4xl xl:text-6xl font-extrabold"
+              />
+
+              {(item.text.includes('Code commits') ||
+                item.text.includes('Years of experience')) && (
+                <p className="text-4xl font-extrabold">+</p>
+              )}
+            </div>
 
             <p
               className={`${

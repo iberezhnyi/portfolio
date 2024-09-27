@@ -9,71 +9,39 @@ import {
 const about: IAboutMe = {
   title: 'About Me',
   description:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel bibendum ipsum. Integer vel libero vel velit sagittis tincidunt. In hac habitasse platea dictumst.',
+    'I am a passionate Full-Stack developer with a focus on creating efficient, responsive web applications. With a strong foundation in both front-end and back-end technologies, I strive to deliver clean, maintainable code and innovative solutions to complex problems.',
 
   info: [
     { fieldName: 'Name', fieldValue: 'Ihor Berezhnyi' },
-    { fieldName: 'Phone', fieldValue: '+38 (063) 111 11 11' },
-    { fieldName: 'Experience', fieldValue: '1+ Year' },
-    { fieldName: 'Nationality', fieldValue: 'American' },
-    { fieldName: 'Telegram', fieldValue: '@iberezhnyi' },
     { fieldName: 'Email', fieldValue: 'iberezhnyi@gmail.com' },
-    { fieldName: 'Freelance', fieldValue: 'Available' },
+    { fieldName: 'Phone', fieldValue: '+38(063) *** ** **' },
+    { fieldName: 'Telegram', fieldValue: '@iberezhnyi' },
+    // { fieldName: 'Experience', fieldValue: '1+ Year' },
+    { fieldName: 'Experience', fieldValue: '1+ years learning and practicing' },
     { fieldName: 'Languages', fieldValue: 'English, Ukrainian, Russian' },
+    { fieldName: 'Freelance', fieldValue: 'Available' },
   ],
 }
 
 const experience: IExperience = {
   title: 'My experience',
   description:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel bibendum ipsum. Integer vel libero vel velit sagittis tincidunt. In hac habitasse platea dictumst.',
+    'As an aspiring developer, I have been focused on building strong foundational skills through personal and collaborative projects.',
   items: [
     {
-      company: 'Tech Solutions Inc.',
-      position: 'Full Stack Developer',
-      duration: '2024-present',
+      company: '"Filin Consult", LLC',
+      position: 'Legal advisor',
+      description: [
+        "Providing legal assistance and guidance to the company's law policies.",
+      ],
+      duration: '2016-2023',
     },
 
     {
-      company: 'Web Design Studio',
-      position: 'Front-End Developer Intern',
-      duration: 'Summer 2023',
-    },
-
-    {
-      company: 'E-commerce Startup',
-      position: 'Freelance Web Developer',
-      duration: '2022-2023',
-    },
-
-    {
-      company: 'Software Development Firm',
-      position: 'Junior Developer',
-      duration: '2024',
-    },
-
-    {
-      company: 'Software Development Firm',
-      position: 'Junior Developer',
-      duration: '2024',
-    },
-
-    {
-      company: 'Software Development Firm',
-      position: 'Junior Developer',
-      duration: '2024',
-    },
-
-    {
-      company: 'Software Development Firm',
-      position: 'Junior Developer',
-      duration: '2024',
-    },
-
-    {
-      company: 'Software Development Firm',
-      position: 'Junior Developer',
-      duration: '2024',
+      company: '"Delawyers", LLC',
+      position: 'Legal advisor',
+      description: ["Lawyer's assistant."],
+      duration: '2014-2016',
     },
   ],
 }
@@ -81,11 +49,17 @@ const experience: IExperience = {
 const education: IEducation = {
   title: 'My education',
   description:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel bibendum ipsum. Integer vel libero vel velit sagittis tincidunt. In hac habitasse platea dictumst.',
+    'I have developed a deep understanding of full-stack technologies, collaborative team environments, and modern software development practices.',
   items: [
     {
-      institution: 'GoIT',
+      institution: 'IT Academy GoIT',
       degree: 'Full Stack Developer',
+      description: [
+        'Designed and developed full-featured web applications using modern technologies like React.js, Node.js, and Express.',
+        'Actively contributed to code reviews, promoting best practices and improving code quality.',
+        'Implemented responsive and adaptive UI/UX designs, ensuring seamless functionality across various devices and browsers.',
+        'Gained hands-on experience in working with APIs, databases (e.g., MongoDB), and deployment tools.',
+      ],
       duration: '2023-2024',
     },
   ],
@@ -94,7 +68,7 @@ const education: IEducation = {
 const skills: ISkills = {
   title: 'My skills',
   description:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel bibendum ipsum. Integer vel libero vel velit sagittis tincidunt. In hac habitasse platea dictumst.',
+    'I have experience working with a diverse range of front-end and back-end technologies, focusing on building responsive, scalable, and performant web applications.',
   skillList: [
     { icon: 'FaHtml5', name: 'HTML5' },
     { icon: 'FaCss3', name: 'CSS3' },

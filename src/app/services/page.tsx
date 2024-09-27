@@ -43,7 +43,7 @@ const Services: FC = () => {
                     </Link>
                   </div>
 
-                  <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500">
+                  <h2 className="text-[32px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500">
                     {item.title}
                   </h2>
 

@@ -72,10 +72,13 @@ const ContactForm: FC<ContactFormProps> = ({ onSubmit }) => {
         onSubmit={handleSubmit}
         className="flex flex-col gap-6 p-10 bg-[#27272C] rounded-xl"
       >
-        <h3 className="text-4xl text-accent">Let&apos;s work together</h3>
+        <h3 className="text-4xl text-accent">
+          Let&apos;s connect or share your feedback
+        </h3>
         <p className="text-white/60">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
-          voluptates harum sapiente nihil facilis!
+          Whether you have a project to collaborate on, or just want to share
+          some feedback, feel free to send a message. I&apos;d love to hear from
+          you!
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Input

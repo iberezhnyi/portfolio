@@ -49,7 +49,7 @@ const Contacts: FC = () => {
     >
       <div className="container mx-auto">
         <VisuallyHidden>
-          <h1>Reach Out for Collaboration</h1>
+          <h1>Get in Touch for Collaboration or Feedback</h1>
         </VisuallyHidden>
 
         <div className="flex flex-col xl:flex-row gap-[30px]">

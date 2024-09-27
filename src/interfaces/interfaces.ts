@@ -64,24 +64,26 @@ interface IInfoField {
 export interface IExperience {
   title: string
   description: string
-  items: IExperienceItem[]
+  items: ICompanyItem[]
 }
 
-interface IExperienceItem {
+interface ICompanyItem {
   company: string
   position: string
+  description: string[]
   duration: string
 }
 
 export interface IEducation {
   title: string
   description: string
-  items: IEducationItem[]
+  items: IInstitutionItem[]
 }
 
-interface IEducationItem {
+interface IInstitutionItem {
   institution: string
   degree: string
+  description: string[]
   duration: string
 }
 
