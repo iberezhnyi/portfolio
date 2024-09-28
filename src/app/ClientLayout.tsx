@@ -16,7 +16,7 @@ const ClientLayout: FC<ClientLayoutProps> = ({ children }) => {
       <Header />
       <StairsTransition />
       <PageTransition>
-        <SnackbarProvider maxSnack={3}>
+        <SnackbarProvider maxSnack={5}>
           <main className="h-full">{children}</main>
         </SnackbarProvider>
       </PageTransition>

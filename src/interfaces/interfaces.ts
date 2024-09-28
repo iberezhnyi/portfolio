@@ -111,3 +111,17 @@ export interface IContactInfoItem {
   description: string
   href: string
 }
+
+export interface IContactFormDataDto {
+  firstname: string
+  lastname: string
+  email: string
+  phone: string
+  message: string
+}
+
+export interface IMessageTemplate extends Partial<IContactFormDataDto> {
+  name: string
+  fromMail?: string
+  fromName?: string
+}

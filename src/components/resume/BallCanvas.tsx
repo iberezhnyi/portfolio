@@ -1,5 +1,4 @@
-import { FC, ReactNode, Suspense, useEffect, useRef } from 'react'
-import * as THREE from 'three'
+import { FC, ReactNode, Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Preload } from '@react-three/drei'
 import SceneCleanup from '../common/SceneCleanup'

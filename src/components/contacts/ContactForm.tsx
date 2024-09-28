@@ -1,69 +1,47 @@
 'use client'
 
-import { FC, FormEvent, useState } from 'react'
+import { FC, FormEvent, useEffect, useState } from 'react'
 import { Input } from '@/components/ui/input'
-// import {
-//   Select,
-//   SelectContent,
-//   SelectGroup,
-//   SelectItem,
-//   SelectLabel,
-//   SelectTrigger,
-//   SelectValue,
-// } from '@/components/ui/select'
 import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
-import { ContactFormData } from '@/app/contacts/page'
-import { useSnackbar } from 'notistack'
 import { cn } from '@/lib/utils'
 import MoonLoader from 'react-spinners/MoonLoader'
+import { IContactFormDataDto } from '@/interfaces/interfaces'
 
 interface ContactFormProps {
-  onSubmit: (formData: ContactFormData) => Promise<boolean>
+  onSubmit: (formData: IContactFormDataDto) => Promise<boolean>
+  isSubmitting: boolean
 }
 
-const ContactForm: FC<ContactFormProps> = ({ onSubmit }) => {
+const ContactForm: FC<ContactFormProps> = ({ onSubmit, isSubmitting }) => {
   const [firstname, setFirstname] = useState('')
   const [lastname, setLastname] = useState('')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
-  // const [service, setService] = useState('')
   const [message, setMessage] = useState('')
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const { enqueueSnackbar } = useSnackbar()
+
+  useEffect(() => {}, [isSubmitting])
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    setIsSubmitting(true)
-
-    const success = await onSubmit({
+    const formData: IContactFormDataDto = {
       firstname,
       lastname,
       email,
       phone,
-      // service,
       message,
-    })
-
-    if (success) {
-      enqueueSnackbar('Your message has been successfully sent!', {
-        variant: 'success',
-      })
-
-      setFirstname('')
-      setLastname('')
-      setEmail('')
-      setPhone('')
-      // setService('')
-      setMessage('')
-
-      setIsSubmitting(false)
-    } else {
-      enqueueSnackbar('Error sending message.', { variant: 'error' })
-
-      setIsSubmitting(false)
     }
+
+    const success = await onSubmit(formData)
+
+    if (!success) return
+
+    setFirstname('')
+    setLastname('')
+    setEmail('')
+    setPhone('')
+    setMessage('')
   }
 
   return (
@@ -86,9 +64,10 @@ const ContactForm: FC<ContactFormProps> = ({ onSubmit }) => {
               firstname ? 'focus:border-accent' : 'focus:border-red-300',
             )}
             isRequired
-            value={firstname.trim()}
+            value={firstname}
             onChange={(e) => setFirstname(e.target.value)}
-            type="firstname"
+            type="text"
+            name="firstname"
             placeholder="Firstname"
           />
           <Input
@@ -96,9 +75,10 @@ const ContactForm: FC<ContactFormProps> = ({ onSubmit }) => {
               lastname ? 'focus:border-accent' : 'focus:border-red-300',
             )}
             isRequired
-            value={lastname.trim()}
+            value={lastname}
             onChange={(e) => setLastname(e.target.value)}
-            type="lastname"
+            type="text"
+            name="lastname"
             placeholder="Lastname"
           />
           <Input
@@ -106,9 +86,10 @@ const ContactForm: FC<ContactFormProps> = ({ onSubmit }) => {
               email ? 'focus:border-accent' : 'focus:border-red-300',
             )}
             isRequired
-            value={email.trim()}
+            value={email}
             onChange={(e) => setEmail(e.target.value)}
             type="email"
+            name="email"
             placeholder="Email address"
           />
           <Input
@@ -116,26 +97,13 @@ const ContactForm: FC<ContactFormProps> = ({ onSubmit }) => {
               phone ? 'focus:border-accent' : 'focus:border-red-300',
             )}
             isRequired
-            value={phone.trim()}
+            value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            type="phone"
+            type="text"
+            name="phone"
             placeholder="Phone number"
           />
         </div>
-
-        {/* <Select onValueChange={setService} required>
-          <SelectTrigger className="w-ful ">
-            <SelectValue placeholder="Select a service" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectGroup>
-              <SelectLabel>Select a service</SelectLabel>
-              <SelectItem value="est">Web Development</SelectItem>
-              <SelectItem value="cst">UI/UX Design</SelectItem>
-              <SelectItem value="mst">Logo Design</SelectItem>
-            </SelectGroup>
-          </SelectContent>
-        </Select> */}
 
         <Textarea
           className={cn(
@@ -143,7 +111,8 @@ const ContactForm: FC<ContactFormProps> = ({ onSubmit }) => {
             message ? 'focus:border-accent' : 'focus:border-red-300 ',
           )}
           isRequired
-          value={message.trim()}
+          value={message}
+          name="message"
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Type your message here"
         />
@@ -164,14 +133,14 @@ const ContactForm: FC<ContactFormProps> = ({ onSubmit }) => {
               'Send message'
             )}
           </Button>
-          <button
+          {/* <button
             type="button"
             onClick={() =>
               enqueueSnackbar('Your message has been successfully sent!', {
                 variant: 'success',
               })
             }
-          ></button>
+          ></button> */}
           <p className="text-center text-white/60">
             All fields are required<sup className="text-red-300"> *</sup>
           </p>

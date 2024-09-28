@@ -1,40 +1,52 @@
 'use client'
 
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import { motion } from 'framer-motion'
 import ContactForm from '@/components/contacts/ContactForm'
 import ContactsList from '@/components/contacts/ContactsList'
 import { VisuallyHidden } from '@radix-ui/react-visually-hidden'
-
-export interface ContactFormData {
-  firstname: string
-  lastname: string
-  email: string
-  phone: string
-  // service: string
-  message: string
-}
+import { IContactFormDataDto } from '@/interfaces/interfaces'
+import { fetchMail } from '@/lib/fetchMail'
+import { useSnackbar } from 'notistack'
+import * as Yup from 'yup'
+import { validationSchema } from '@/lib/validationSchema'
 
 const Contacts: FC = () => {
-  const onSubmit = async (formData: ContactFormData): Promise<boolean> => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const { enqueueSnackbar } = useSnackbar()
+
+  const onSubmit = async (formData: IContactFormDataDto): Promise<boolean> => {
     try {
-      const response = await fetch('/api/mail', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      })
+      setIsSubmitting(true)
 
-      // if (response.ok) {
-      //   return true
-      // } else {
-      //   return false
-      // }
+      await validationSchema.validate(formData, { abortEarly: false })
 
-      return Boolean(response.ok)
+      const { attempt } = await fetchMail(formData)
+
+      console.log('attempt :>> ', attempt)
+
+      if (attempt) {
+        enqueueSnackbar('Your message has been successfully sent!', {
+          variant: 'success',
+        })
+        return true
+      } else {
+        enqueueSnackbar('Error sending message.', { variant: 'error' })
+        return false
+      }
     } catch (error) {
-      console.error('Something went wrong:', error)
+      if (error instanceof Yup.ValidationError) {
+        error.inner.forEach((err) => {
+          enqueueSnackbar(err.message, { variant: 'error' })
+        })
 
+        console.log('error :>> ', error)
+      }
+
+      console.log('error :>> ', error)
       return false
+    } finally {
+      setIsSubmitting(false)
     }
   }
 
@@ -53,7 +65,7 @@ const Contacts: FC = () => {
         </VisuallyHidden>
 
         <div className="flex flex-col xl:flex-row gap-[30px]">
-          <ContactForm onSubmit={onSubmit} />
+          <ContactForm onSubmit={onSubmit} isSubmitting={isSubmitting} />
 
           <ContactsList />
         </div>
