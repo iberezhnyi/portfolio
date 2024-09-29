@@ -10,17 +10,13 @@ export const fetchMail = async (
       body: JSON.stringify(formData),
     })
 
-    console.log('response :>> ', response)
-
     return { attempt: Boolean(response.ok) }
-  } catch (error: unknown) {
+  } catch (error) {
     let errorMessage = 'Unknown error occurred'
 
     if (error instanceof Error) {
       errorMessage = error.message
     }
-
-    console.log('Something went wrong:', errorMessage)
 
     return { attempt: false, message: errorMessage }
   }

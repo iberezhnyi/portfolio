@@ -1,5 +1,4 @@
 import { mailServiceConfig } from './mailServiceConfig'
-import { NextResponse } from 'next/server'
 import {
   userTextMessageTemplate,
   adminTextMessageTemplate,
@@ -14,14 +13,11 @@ const fromName = process.env.FROM_NAME
 export const mailService = async (props: IContactFormDataDto) => {
   const { firstname, lastname, email, phone, message } = props
 
-  if (!fromMail || !fromName) {
-    return NextResponse.json(
-      { message: 'Server configuration error' },
-      { status: 500 },
-    )
-  }
-
   try {
+    if (!fromMail || !fromName) {
+      throw new Error('Server configuration error')
+    }
+
     const adminMessage = await mailServiceConfig({
       from: { address: email, name: `${firstname} ${lastname}` },
       to: { address: fromMail, name: fromName },
@@ -66,17 +62,10 @@ export const mailService = async (props: IContactFormDataDto) => {
       }),
     })
 
-    console.log('userMessage :>> ', userMessage)
-    console.log('adminMessage :>> ', adminMessage)
     if (userMessage || adminMessage) {
-      return new Error('Failed to send email')
+      throw new Error('Failed to send email')
     }
-
-    return NextResponse.json({ message: 'Email sent successfully!' })
   } catch (error) {
-    return NextResponse.json(
-      { message: 'Failed to send email' },
-      { status: 500 },
-    )
+    throw error
   }
 }

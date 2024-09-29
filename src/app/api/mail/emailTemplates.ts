@@ -138,10 +138,7 @@ export const adminHtmlMessageTemplate = ({
 </html>
 `
 
-export const userHtmlMessageTemplate = ({
-  name,
-  fromName,
-}: IMessageTemplate) => `
+export const userHtmlMessageTemplate = ({ name, fromName }: IMessageTemplate) => `
 <!doctype html>
 <html lang="ru">
   <head>
@@ -245,11 +242,11 @@ export const userHtmlMessageTemplate = ({
               <!-- START MAIN CONTENT AREA -->
               <tr>
                 <td class="wrapper" style="font-family: Helvetica, sans-serif; font-size: 16px; vertical-align: top; box-sizing: border-box; padding: 24px;" valign="top">
-                  <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;">Hello, ${name}</p>
+                  <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;"><strong>Hello, ${name}</strong></p>
                   <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;">Thank you for your message! We have received your message and will get back to you.</p>
                   <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;">If you have any additional questions, feel free to contact me.</p>
-                  <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;">Best regards,</p>
-                  <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;">${fromName}</p>
+                  <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;"><strong>Best regards,</strong></p>
+                  <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;"><strong>${fromName}</strong></p>
                 </td>
               </tr>
 
@@ -261,8 +258,7 @@ export const userHtmlMessageTemplate = ({
               <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;" width="100%">
                 <tr>
                   <td class="content-block" style="font-family: Helvetica, sans-serif; vertical-align: top; color: #9a9ea6; font-size: 16px; text-align: center;" valign="top" align="center">
-                    <span class="apple-link" style="color: #9a9ea6; font-size: 16px; text-align: center;">Компания "Ваше Название", Адрес компании, Город</span>
-                    <br> Если вы не хотите получать уведомления, <a href="#" style="text-decoration: underline; color: #9a9ea6; font-size: 16px; text-align: center;">отпишитесь здесь</a>.
+                    <span class="apple-link" style="color: #9a9ea6; font-size: 16px; text-align: center;"><a href="#" style="text-decoration: underline; color: #9a9ea6; font-size: 16px; text-align: center;">${fromName}</a>, Kyiv, Ukraine</span>
                   </td>
                 </tr>
               </table>
@@ -286,3 +282,6 @@ Some admin text message
 export const userTextMessageTemplate = ({}: IMessageTemplate) => `
 Some user text message
 `
+
+
+// <br> Если вы не хотите получать уведомления, <a href="#" style="text-decoration: underline; color: #9a9ea6; font-size: 16px; text-align: center;">отпишитесь здесь</a>.

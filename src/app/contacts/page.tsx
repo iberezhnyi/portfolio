@@ -23,8 +23,6 @@ const Contacts: FC = () => {
 
       const { attempt } = await fetchMail(formData)
 
-      console.log('attempt :>> ', attempt)
-
       if (attempt) {
         enqueueSnackbar('Your message has been successfully sent!', {
           variant: 'success',
@@ -39,11 +37,8 @@ const Contacts: FC = () => {
         error.inner.forEach((err) => {
           enqueueSnackbar(err.message, { variant: 'error' })
         })
-
-        console.log('error :>> ', error)
       }
 
-      console.log('error :>> ', error)
       return false
     } finally {
       setIsSubmitting(false)

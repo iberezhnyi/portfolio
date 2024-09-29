@@ -17,11 +17,11 @@ export const mailServiceConfig = async ({
   html,
   text,
 }: ISendEmailDto): Promise<nodemailer.SentMessageInfo> => {
-  if (!from || !to) {
-    throw new Error('Invalid email addresses')
-  }
-
   try {
+    if (!from || !to) {
+      throw new Error('Invalid email addresses')
+    }
+
     const transporter = nodemailer.createTransport({
       host: process.env.MAIL_HOST,
       port: Number(process.env.MAIL_PORT),
@@ -48,13 +48,11 @@ export const mailServiceConfig = async ({
     // })
 
     if (info.accepted.length > 0) {
-      console.log('Message sent successfully to:', info.accepted)
       return info
     } else {
-      console.log('Message was not accepted by any recipients.')
-      throw new Error('Message was not accepted by any recipients.')
+      throw new Error('400 - Message was not accepted by any recipients.')
     }
   } catch (error) {
-    console.log('error :>> ', error)
+    throw error
   }
 }
