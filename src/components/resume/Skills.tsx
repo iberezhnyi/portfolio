@@ -73,18 +73,35 @@ const Skills: FC = () => {
         ))}
       </ul> */}
       {isPanet ? (
-        <div>
-          <p>My skills:</p>
-          <ul className="flex flex-wrap gap-4 mb-4">
-            {technologies.map((item, index) => (
-              <li key={index} className="text-xl text-accent indent-4">
-                {item.name}
-                {index !== technologies.length - 1 && ','}
-                {index === technologies.length - 1 && '.'}
+        <ul className="grid grid-cols-2 lg:grid-cols-5 gap-[10px]">
+          {[
+            technologies[0],
+            technologies[1],
+            technologies[2],
+            technologies[3],
+          ].map((item, index) => (
+            <>
+              {console.log(technologies)}
+              <li key={index}>
+                <TooltipProvider delayDuration={100}>
+                  <Tooltip>
+                    <TooltipTrigger className="w-full h-[150px] flex justify-center items-center group">
+                      <div className="text-6xl group-hover:text-accent transition-all duration-300">
+                        <BallCanvas>
+                          <Ball imgUrl={item.icon} />
+                        </BallCanvas>
+                      </div>
+                    </TooltipTrigger>
+
+                    <TooltipContent>
+                      <p className="capitalize">{item.name}</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
               </li>
-            ))}
-          </ul>
-        </div>
+            </>
+          ))}
+        </ul>
       ) : (
         <ul className="grid grid-cols-2 lg:grid-cols-5 gap-[10px]">
           {technologies.map((item, index) => (
