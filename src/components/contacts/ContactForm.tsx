@@ -133,14 +133,6 @@ const ContactForm: FC<ContactFormProps> = ({ onSubmit, isSubmitting }) => {
               'Send message'
             )}
           </Button>
-          {/* <button
-            type="button"
-            onClick={() =>
-              enqueueSnackbar('Your message has been successfully sent!', {
-                variant: 'success',
-              })
-            }
-          ></button> */}
           <p className="text-center text-white/60">
             All fields are required<sup className="text-red-300"> *</sup>
           </p>
