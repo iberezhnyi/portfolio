@@ -20,7 +20,7 @@ import {
 import BallCanvas from './BallCanvas'
 import Ball from './Ball'
 import { useMediaQuery } from 'react-responsive'
-import { maxXs as maxXsQuery } from '@/helpers/mediaQueries'
+import { xS as xSQuery } from '@/helpers/mediaQueries'
 
 // export const techIconMap = {
 //   FaHtml5: <FaHtml5 />,
@@ -36,15 +36,15 @@ import { maxXs as maxXsQuery } from '@/helpers/mediaQueries'
 const Skills: FC = () => {
   const [isPanet, setisPanet] = useState(false)
 
-  const maxXs = useMediaQuery({ query: maxXsQuery.query })
+  const xS = useMediaQuery({ query: xSQuery.query })
 
   useEffect(() => {
-    if (maxXs) {
+    if (xS) {
       setisPanet(true)
     } else {
       setisPanet(false)
     }
-  }, [maxXs])
+  }, [xS])
 
   return (
     <section className="flex flex-col gap-[30px]">
@@ -80,26 +80,23 @@ const Skills: FC = () => {
             technologies[2],
             technologies[3],
           ].map((item, index) => (
-            <>
-              {console.log(technologies)}
-              <li key={index}>
-                <TooltipProvider delayDuration={100}>
-                  <Tooltip>
-                    <TooltipTrigger className="w-full h-[150px] flex justify-center items-center group">
-                      <div className="text-6xl group-hover:text-accent transition-all duration-300">
-                        <BallCanvas>
-                          <Ball imgUrl={item.icon} />
-                        </BallCanvas>
-                      </div>
-                    </TooltipTrigger>
+            <li key={index}>
+              <TooltipProvider delayDuration={100}>
+                <Tooltip>
+                  <TooltipTrigger className="w-full h-[150px] flex justify-center items-center group">
+                    <div className="text-6xl group-hover:text-accent transition-all duration-300">
+                      <BallCanvas>
+                        <Ball imgUrl={item.icon} />
+                      </BallCanvas>
+                    </div>
+                  </TooltipTrigger>
 
-                    <TooltipContent>
-                      <p className="capitalize">{item.name}</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
-              </li>
-            </>
+                  <TooltipContent>
+                    <p className="capitalize">{item.name}</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+            </li>
           ))}
         </ul>
       ) : (
