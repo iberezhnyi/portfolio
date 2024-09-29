@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { VisuallyHidden } from '@radix-ui/react-visually-hidden'
 import { useMediaQuery } from 'react-responsive'
-import { maxSm as maxSmQuery } from '@/helpers/mediaQueries'
+import { maxMd as maxMdQuery } from '@/helpers/mediaQueries'
 
 const Experience = dynamic(() => import('@/components/resume/Experience'))
 const Education = dynamic(() => import('@/components/resume/Education'))
@@ -16,15 +16,15 @@ const About = dynamic(() => import('@/components/resume/About'))
 const Resume: FC = () => {
   const [isPanet, setisPanet] = useState(false)
 
-  const maxSm = useMediaQuery({ query: maxSmQuery.query })
+  const maxMd = useMediaQuery({ query: maxMdQuery.query })
 
   useEffect(() => {
-    if (maxSm) {
+    if (maxMd) {
       setisPanet(true)
     } else {
       setisPanet(false)
     }
-  }, [maxSm])
+  }, [maxMd])
 
   return (
     <motion.div
