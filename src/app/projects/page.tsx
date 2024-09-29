@@ -13,11 +13,17 @@ import 'swiper/css'
 
 const Projects: FC = () => {
   const [currentProject, setCurrentProject] = useState<IProject>(allProjects[0])
+  const [loading, setLoading] = useState(true)
 
   const handleSlideChange = (swiper: SwiperClass): void => {
     const currentIndex = swiper.activeIndex
 
     setCurrentProject(allProjects[currentIndex])
+    setLoading(true)
+  }
+
+  const handleImageLoad = () => {
+    setLoading(false) // Скрыть спиннер, когда изображение загружено
   }
 
   return (
@@ -41,6 +47,9 @@ const Projects: FC = () => {
             allProjects={allProjects}
             currentProject={currentProject}
             onSlideChange={handleSlideChange}
+            loading={loading}
+            onImageLoad={handleImageLoad}
+            setLoading={setLoading}
           />
         </div>
       </div>

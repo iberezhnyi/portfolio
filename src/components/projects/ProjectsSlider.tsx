@@ -3,30 +3,50 @@ import Image from 'next/image'
 import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
 import SliderBtns from './SliderBtns'
 import { IProject } from '@/interfaces/interfaces'
+import { ClipLoader } from 'react-spinners'
 
 interface ProjectSliderProps {
   allProjects: IProject[]
   currentProject: IProject
   onSlideChange: (swiper: SwiperClass) => void
+  loading: boolean
+  onImageLoad: () => void
+  setLoading: (bool: boolean) => void
 }
 // xl:mt-6
 const ProjectsSlider: FC<ProjectSliderProps> = ({
   allProjects,
   currentProject,
   onSlideChange,
+  setLoading,
+  loading,
+  onImageLoad,
 }) => {
+  // const handleImageLoad = () => {
+  //   setLoading(false)
+  // }
   return (
     <div className="w-full xl:w-[50%]">
       <Swiper
         spaceBetween={30}
         slidesPerView={1}
         className="xl:h-[520px] mb-12 xl:mt-4"
-        onSlideChange={onSlideChange}
+        // onSlideChange={onSlideChange}
+        onSlideChange={(swiper) => {
+          setLoading(true) // Показываем спиннер при смене слайда
+          onSlideChange(swiper)
+        }}
       >
         {allProjects.map((item, index) => (
           <SwiperSlide key={index} className="w-full">
             <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
               <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
+
+              {loading && (
+                <div className="absolute z-20 flex justify-center items-center w-full h-full bg-accent">
+                  <ClipLoader color="#fff" loading={loading} size={50} />
+                </div>
+              )}
 
               <div className="relative w-full h-full">
                 <Image
@@ -35,6 +55,7 @@ const ProjectsSlider: FC<ProjectSliderProps> = ({
                   className="object-cover"
                   alt=""
                   // sizes="(max-width: 1200px) 100vw, 50vw"
+                  onLoad={onImageLoad}
                 />
               </div>
             </div>
