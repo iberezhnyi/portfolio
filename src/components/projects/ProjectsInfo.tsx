@@ -20,6 +20,7 @@ import {
 import { BsArrowUpRight, BsGithub } from 'react-icons/bs'
 import { IProject } from '@/interfaces/interfaces'
 import NodesCanvas from './NodesCanvas/NodesCanvas'
+import { lG, mD, sM, xL, xS } from '@/helpers/mediaQueries'
 
 interface ProjectsInfoProps {
   currentProject: IProject
@@ -30,11 +31,11 @@ const ProjectsInfo: FC<ProjectsInfoProps> = ({ currentProject }) => {
     [number, number][]
   >([])
 
-  const isXL = useMediaQuery({ minWidth: 1200 })
-  const isLG = useMediaQuery({ minWidth: 960, maxWidth: 1199 })
-  const isMD = useMediaQuery({ minWidth: 768, maxWidth: 959 })
-  const isSM = useMediaQuery({ minWidth: 640, maxWidth: 767 })
-  const isXS = useMediaQuery({ minWidth: 480, maxWidth: 639 })
+  const isXL = useMediaQuery(xL)
+  const isLG = useMediaQuery(lG)
+  const isMD = useMediaQuery(mD)
+  const isSM = useMediaQuery(sM)
+  const isXS = useMediaQuery(xS)
 
   useEffect(() => {
     if (isXL) {

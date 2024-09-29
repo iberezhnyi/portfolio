@@ -1,4 +1,6 @@
-import { FC } from 'react'
+'use client'
+
+import { FC, useEffect, useState } from 'react'
 import { skills, technologies } from '@/data/resume/resumeData'
 import {
   Tooltip,
@@ -17,6 +19,8 @@ import {
 // } from 'react-icons/fa'
 import BallCanvas from './BallCanvas'
 import Ball from './Ball'
+import { useMediaQuery } from 'react-responsive'
+import { maxXs as maxXsQuery } from '@/helpers/mediaQueries'
 
 // export const techIconMap = {
 //   FaHtml5: <FaHtml5 />,
@@ -30,6 +34,18 @@ import Ball from './Ball'
 // }
 
 const Skills: FC = () => {
+  const [isPanet, setisPanet] = useState(false)
+
+  const maxXs = useMediaQuery({ query: maxXsQuery.query })
+
+  useEffect(() => {
+    if (maxXs) {
+      setisPanet(true)
+    } else {
+      setisPanet(false)
+    }
+  }, [maxXs])
+
   return (
     <section className="flex flex-col gap-[30px]">
       <div className="flex flex-col gap-[30px] text-center xl:text-left">
@@ -38,7 +54,6 @@ const Skills: FC = () => {
           {skills.description}
         </p>
       </div>
-
       {/* <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
         {skills.skillList.map((skill, index) => (
           <li key={index}>
@@ -57,8 +72,43 @@ const Skills: FC = () => {
           </li>
         ))}
       </ul> */}
+      {isPanet ? (
+        <div>
+          <p>My skills:</p>
+          <ul className="flex flex-wrap gap-4 mb-4">
+            {technologies.map((item, index) => (
+              <li key={index} className="text-xl text-accent indent-4">
+                {item.name}
+                {index !== technologies.length - 1 && ','}
+                {index === technologies.length - 1 && '.'}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : (
+        <ul className="grid grid-cols-2 lg:grid-cols-5 gap-[10px]">
+          {technologies.map((item, index) => (
+            <li key={index}>
+              <TooltipProvider delayDuration={100}>
+                <Tooltip>
+                  <TooltipTrigger className="w-full h-[150px] flex justify-center items-center group">
+                    <div className="text-6xl group-hover:text-accent transition-all duration-300">
+                      <BallCanvas>
+                        <Ball imgUrl={item.icon} />
+                      </BallCanvas>
+                    </div>
+                  </TooltipTrigger>
 
-      <ul className="grid grid-cols-2 lg:grid-cols-5 gap-[10px]">
+                  <TooltipContent>
+                    <p className="capitalize">{item.name}</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+            </li>
+          ))}
+        </ul>
+      )}
+      {/* <ul className="grid grid-cols-2 lg:grid-cols-5 gap-[10px]">
         {technologies.map((item, index) => (
           <li key={index}>
             <TooltipProvider delayDuration={100}>
@@ -78,7 +128,7 @@ const Skills: FC = () => {
             </TooltipProvider>
           </li>
         ))}
-      </ul>
+      </ul> */}
     </section>
   )
 }
