@@ -22,18 +22,14 @@ const ProjectsSlider: FC<ProjectSliderProps> = ({
   loading,
   onImageLoad,
 }) => {
-  // const handleImageLoad = () => {
-  //   setLoading(false)
-  // }
   return (
     <div className="w-full xl:w-[50%]">
       <Swiper
         spaceBetween={30}
         slidesPerView={1}
         className="xl:h-[520px] mb-12 xl:mt-4"
-        // onSlideChange={onSlideChange}
         onSlideChange={(swiper) => {
-          setLoading(true) // Показываем спиннер при смене слайда
+          setLoading(true)
           onSlideChange(swiper)
         }}
       >

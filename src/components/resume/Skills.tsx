@@ -1,6 +1,6 @@
 'use client'
 
-import { FC, useEffect, useState } from 'react'
+import { FC } from 'react'
 import { skills, technologies } from '@/data/resume/resumeData'
 import {
   Tooltip,
@@ -19,8 +19,6 @@ import {
 // } from 'react-icons/fa'
 import BallCanvas from './BallCanvas'
 import Ball from './Ball'
-import { useMediaQuery } from 'react-responsive'
-import { xS as xSQuery } from '@/helpers/mediaQueries'
 
 // export const techIconMap = {
 //   FaHtml5: <FaHtml5 />,
@@ -33,19 +31,11 @@ import { xS as xSQuery } from '@/helpers/mediaQueries'
 //   SiNextdotjs: <SiNextdotjs />,
 // }
 
-const Skills: FC = () => {
-  const [isPanet, setisPanet] = useState(false)
+interface ISkillsProps {
+  isPanet: boolean
+}
 
-  const xS = useMediaQuery({ query: xSQuery.query })
-
-  useEffect(() => {
-    if (xS) {
-      setisPanet(true)
-    } else {
-      setisPanet(false)
-    }
-  }, [xS])
-
+const Skills: FC<ISkillsProps> = ({ isPanet }) => {
   return (
     <section className="flex flex-col gap-[30px]">
       <div className="flex flex-col gap-[30px] text-center xl:text-left">

@@ -1,10 +1,12 @@
 'use client'
 
-import { FC } from 'react'
+import { FC, useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
 import { motion } from 'framer-motion'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { VisuallyHidden } from '@radix-ui/react-visually-hidden'
+import { useMediaQuery } from 'react-responsive'
+import { sM as sMQuery } from '@/helpers/mediaQueries'
 
 const Experience = dynamic(() => import('@/components/resume/Experience'))
 const Education = dynamic(() => import('@/components/resume/Education'))
@@ -12,6 +14,18 @@ const Skills = dynamic(() => import('@/components/resume/Skills'))
 const About = dynamic(() => import('@/components/resume/About'))
 
 const Resume: FC = () => {
+  const [isPanet, setisPanet] = useState(false)
+
+  const sM = useMediaQuery({ query: sMQuery.query })
+
+  useEffect(() => {
+    if (sM) {
+      setisPanet(true)
+    } else {
+      setisPanet(false)
+    }
+  }, [sM])
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -57,7 +71,7 @@ const Resume: FC = () => {
             </TabsContent>
 
             <TabsContent value="skills" className="w-full">
-              <Skills />
+              <Skills isPanet={isPanet} />
             </TabsContent>
 
             <TabsContent
