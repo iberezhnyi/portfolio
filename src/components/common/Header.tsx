@@ -7,7 +7,7 @@ import Nav from './Nav'
 import MobileNav from './MobileNav'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
-import MagicButton from './MagicButton'
+// import MagicButton from './MagicButton'
 
 const Header: FC = () => {
   const pathname = usePathname()
@@ -24,7 +24,7 @@ const Header: FC = () => {
           </Link>
         </div>
 
-        <MagicButton />
+        {/* <MagicButton /> */}
 
         <div className="hidden xl:flex items-center gap-8">
           <Nav />
