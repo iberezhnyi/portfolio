@@ -30,7 +30,7 @@ const Services: FC = () => {
                 className="bg-[#232329] py-6 px-10 rounded-xl flex-1 flex flex-col justify-center gap-6 group"
               >
                 <Tilt>
-                  <div className="w-full flex justify-between items-center">
+                  <div className="w-full flex justify-between items-center mb-2">
                     <div className="text-5xl font-extrabold text-outline text-transparent group-hover:text-outline-hover transition-all duration-500">
                       {item.num}
                     </div>
@@ -43,11 +43,11 @@ const Services: FC = () => {
                     </Link>
                   </div>
 
-                  <h2 className="text-[32px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500">
+                  <h2 className="text-[32px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 mb-2">
                     {item.title}
                   </h2>
 
-                  <p className="text-white/60">{item.description}</p>
+                  <p className="text-white/60 mb-2">{item.description}</p>
 
                   <div className="border-b border-white/20 w-full"></div>
                 </Tilt>

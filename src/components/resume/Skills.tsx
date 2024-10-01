@@ -8,28 +8,47 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
-// import { SiTailwindcss, SiNextdotjs } from 'react-icons/si'
-// import {
-//   FaHtml5,
-//   FaCss3,
-//   FaJs,
-//   FaReact,
-//   FaFigma,
-//   FaNodeJs,
-// } from 'react-icons/fa'
+import {
+  SiTailwindcss,
+  SiNextdotjs,
+  SiTypescript,
+  SiNestjs,
+  SiRedux,
+  SiMongodb,
+  SiStyledcomponents,
+  SiDocker,
+  SiExpress,
+} from 'react-icons/si'
+import {
+  FaHtml5,
+  FaCss3,
+  FaJs,
+  FaReact,
+  FaFigma,
+  FaNodeJs,
+  FaGit,
+} from 'react-icons/fa'
 import BallCanvas from './BallCanvas'
 import Ball from './Ball'
 
-// export const techIconMap = {
-//   FaHtml5: <FaHtml5 />,
-//   FaCss3: <FaCss3 />,
-//   FaJs: <FaJs />,
-//   FaReact: <FaReact />,
-//   FaFigma: <FaFigma />,
-//   FaNodeJs: <FaNodeJs />,
-//   SiTailwindcss: <SiTailwindcss />,
-//   SiNextdotjs: <SiNextdotjs />,
-// }
+export const techIconMap = {
+  FaHtml5: <FaHtml5 />,
+  FaCss3: <FaCss3 />,
+  FaJs: <FaJs />,
+  FaReact: <FaReact />,
+  FaFigma: <FaFigma />,
+  FaNodeJs: <FaNodeJs />,
+  FaGit: <FaGit />,
+  SiTailwindcss: <SiTailwindcss />,
+  SiNextdotjs: <SiNextdotjs />,
+  SiTypescript: <SiTypescript />,
+  SiNestjs: <SiNestjs />,
+  SiRedux: <SiRedux />,
+  SiMongodb: <SiMongodb />,
+  SiStyledcomponents: <SiStyledcomponents />,
+  SiDocker: <SiDocker />,
+  SiExpress: <SiExpress />,
+}
 
 interface ISkillsProps {
   isPanet: boolean
@@ -44,43 +63,45 @@ const Skills: FC<ISkillsProps> = ({ isPanet }) => {
           {skills.description}
         </p>
       </div>
-      {/* <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
-        {skills.skillList.map((skill, index) => (
-          <li key={index}>
-            <TooltipProvider delayDuration={100}>
-              <Tooltip>
-                <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
-                  <div className="text-6xl group-hover:text-accent transition-all duration-300">
-                    {techIconMap[skill.icon]}
-                  </div>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p className="capitalize">{skill.name}</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </li>
-        ))}
-      </ul> */}
+
       {isPanet ? (
-        <ul className="grid grid-cols-2 lg:grid-cols-5 gap-[10px]">
-          {[
-            technologies[0],
-            technologies[1],
-            technologies[2],
-            technologies[3],
-          ].map((item, index) => (
+        // <ul className="grid grid-cols-2 lg:grid-cols-5 gap-[10px]">
+        //   {[
+        //     technologies[0],
+        //     technologies[1],
+        //     technologies[2],
+        //     technologies[3],
+        //   ].map((item, index) => (
+        //     <li key={index}>
+        //       <TooltipProvider delayDuration={100}>
+        //         <Tooltip>
+        //           <TooltipTrigger className="w-full h-[150px] flex justify-center items-center group">
+        //             <div className="text-6xl group-hover:text-accent transition-all duration-300">
+        //               <BallCanvas>
+        //                 <Ball imgUrl={item.icon} />
+        //               </BallCanvas>
+        //             </div>
+        //           </TooltipTrigger>
+
+        //           <TooltipContent>
+        //             <p className="capitalize">{item.name}</p>
+        //           </TooltipContent>
+        //         </Tooltip>
+        //       </TooltipProvider>
+        //     </li>
+        //   ))}
+        // </ul>
+
+        <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px]">
+          {technologies.map((item, index) => (
             <li key={index}>
               <TooltipProvider delayDuration={100}>
                 <Tooltip>
-                  <TooltipTrigger className="w-full h-[150px] flex justify-center items-center group">
+                  <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center group">
                     <div className="text-6xl group-hover:text-accent transition-all duration-300">
-                      <BallCanvas>
-                        <Ball imgUrl={item.icon} />
-                      </BallCanvas>
+                      {techIconMap[item.iconLib]}
                     </div>
                   </TooltipTrigger>
-
                   <TooltipContent>
                     <p className="capitalize">{item.name}</p>
                   </TooltipContent>
@@ -112,27 +133,6 @@ const Skills: FC<ISkillsProps> = ({ isPanet }) => {
           ))}
         </ul>
       )}
-      {/* <ul className="grid grid-cols-2 lg:grid-cols-5 gap-[10px]">
-        {technologies.map((item, index) => (
-          <li key={index}>
-            <TooltipProvider delayDuration={100}>
-              <Tooltip>
-                <TooltipTrigger className="w-full h-[150px] flex justify-center items-center group">
-                  <div className="text-6xl group-hover:text-accent transition-all duration-300">
-                    <BallCanvas>
-                      <Ball imgUrl={item.icon} />
-                    </BallCanvas>
-                  </div>
-                </TooltipTrigger>
-
-                <TooltipContent>
-                  <p className="capitalize">{item.name}</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </li>
-        ))}
-      </ul> */}
     </section>
   )
 }

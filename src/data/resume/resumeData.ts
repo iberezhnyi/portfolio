@@ -14,7 +14,7 @@ const about: IAboutMe = {
   info: [
     { fieldName: 'Name', fieldValue: 'Ihor Berezhnyi' },
     { fieldName: 'Email', fieldValue: 'iberezhnyi@gmail.com' },
-    { fieldName: 'Phone', fieldValue: '+38(063) *** ** **' },
+    { fieldName: 'Phone', fieldValue: '+38(063)-738-05-89' },
     { fieldName: 'Telegram', fieldValue: '@iberezhnyi' },
     // { fieldName: 'Experience', fieldValue: '1+ Year' },
     { fieldName: 'Experience', fieldValue: '1+ years learning and practicing' },
@@ -69,107 +69,115 @@ const skills: ISkills = {
   title: 'My skills',
   description:
     'I have experience working with a diverse range of front-end and back-end technologies, focusing on building responsive, scalable, and performant web applications.',
-  skillList: [
-    { icon: 'FaHtml5', name: 'HTML5' },
-    { icon: 'FaCss3', name: 'CSS3' },
-    { icon: 'FaJs', name: 'JavaScript' },
-    { icon: 'FaReact', name: 'React' },
-    { icon: 'FaFigma', name: 'Figma' },
-    { icon: 'FaNodeJs', name: 'Node.js' },
-    { icon: 'SiTailwindcss', name: 'Tailwind CSS' },
-    { icon: 'SiNextdotjs', name: 'Next.js' },
-  ],
 }
 
 export const technologies: ITechnology[] = [
   {
     name: 'HTML 5',
     icon: '/assets/icons/tech/html.png',
+    iconLib: 'FaHtml5',
   },
 
   {
     name: 'CSS 3',
     icon: '/assets/icons/tech/css.png',
+    iconLib: 'FaCss3',
   },
 
   {
     name: 'JavaScript',
     icon: '/assets/icons/tech/javascript.png',
+    iconLib: 'FaJs',
   },
 
   {
     name: 'TypeScript',
     icon: '/assets/icons/tech/typescript.png',
+    iconLib: 'SiTypescript',
   },
 
   {
     name: 'Node JS',
     icon: '/assets/icons/tech/nodejs.png',
+    iconLib: 'FaNodeJs',
   },
 
   {
     name: 'React JS',
     icon: '/assets/icons/tech/reactjs.png',
+    iconLib: 'FaReact',
   },
 
   {
     name: 'Next JS',
     icon: '/assets/icons/tech/next.png',
+    iconLib: 'SiNextdotjs',
   },
 
   {
     name: 'Nest JS',
     icon: '/assets/icons/tech/nest.png',
+    iconLib: 'SiNestjs',
   },
 
   {
     name: 'Redux',
     icon: '/assets/icons/tech/redux.png',
+    iconLib: 'SiRedux',
   },
 
   {
     name: 'MongoDB',
     icon: '/assets/icons/tech/mongodb.png',
+    iconLib: 'SiMongodb',
   },
 
   {
     name: 'Tailwind CSS',
     icon: '/assets/icons/tech/tailwind.png',
+    iconLib: 'SiTailwindcss',
   },
 
   {
     name: 'figma',
     icon: '/assets/icons/tech/figma.png',
+    iconLib: 'FaFigma',
   },
 
   {
     name: 'git',
     icon: '/assets/icons/tech/git.png',
+    iconLib: 'FaGit',
   },
 
   // {
   //   name: 'Three JS',
   //   icon: '/assets/icons/tech/threejs.svg',
-  // },
-
-  // {
-  //   name: 'express',
-  //   icon: '/assets/icons/tech/express.png',
+  //   iconLib: '',
   // },
 
   {
-    name: 'rest',
-    icon: '/assets/icons/tech/rest.png',
+    name: 'express',
+    icon: '/assets/icons/tech/express.png',
+    iconLib: 'SiExpress',
   },
+
+  // {
+  //   name: 'rest',
+  //   icon: '/assets/icons/tech/rest.png',
+  //   iconLib: '',
+  // },
 
   {
     name: 'styledComponents',
     icon: '/assets/icons/tech/styled-components.png',
+    iconLib: 'SiStyledcomponents',
   },
 
   {
     name: 'docker',
     icon: '/assets/icons/tech/docker.png',
+    iconLib: 'SiDocker',
   },
 ]
 

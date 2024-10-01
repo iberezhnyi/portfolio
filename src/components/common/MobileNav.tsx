@@ -26,7 +26,7 @@ const MobileNav: FC = () => {
         <CiMenuFries className="text-[32px] text-accent" />
       </SheetTrigger>
 
-      <SheetContent className="flex flex-col">
+      <SheetContent className="flex flex-col overflow-y-auto">
         <SheetHeader>
           <VisuallyHidden>
             <DialogTitle>Mobile navigation</DialogTitle>

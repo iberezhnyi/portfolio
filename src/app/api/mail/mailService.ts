@@ -12,6 +12,9 @@ const adminName = process.env.ADMIN_NAME
 
 export const mailService = async (props: IContactFormDataDto) => {
   const { firstname, lastname, email, phone, message } = props
+  let name = firstname
+
+  if (lastname) name = `${firstname} ${lastname}`
 
   try {
     if (!adminMail || !adminName) {
@@ -19,11 +22,11 @@ export const mailService = async (props: IContactFormDataDto) => {
     }
 
     const adminMessage = await mailServiceConfig({
-      from: { address: email, name: `${firstname} ${lastname}` },
+      from: { address: email, name },
       to: { address: adminMail, name: adminName },
       subject: `Contact Form Submission`,
       html: adminHtmlMessageTemplate({
-        name: `${firstname} ${lastname}`,
+        name,
         firstname,
         lastname,
         email,
@@ -33,7 +36,7 @@ export const mailService = async (props: IContactFormDataDto) => {
         adminName,
       }),
       text: adminTextMessageTemplate({
-        name: `${firstname} ${lastname}`,
+        name,
         firstname,
         lastname,
         email,
@@ -46,7 +49,7 @@ export const mailService = async (props: IContactFormDataDto) => {
 
     const userMessage = await mailServiceConfig({
       from: { address: adminMail, name: adminName },
-      to: { address: email, name: `${firstname} ${lastname}` },
+      to: { address: email, name },
       // subject: `Response from ${adminName}`,
       subject: `Thank you for contacting me!`,
       html: userHtmlMessageTemplate({
@@ -60,7 +63,7 @@ export const mailService = async (props: IContactFormDataDto) => {
         adminName,
       }),
       text: userTextMessageTemplate({
-        name: `${firstname} ${lastname}`,
+        name,
         firstname,
         lastname,
         email,

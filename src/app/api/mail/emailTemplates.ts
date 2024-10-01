@@ -108,7 +108,7 @@ export const adminHtmlMessageTemplate = ({
               <tr>
                 <td class="wrapper" style="padding: 24px;">
                   <p>Hello,</p>
-                  <p>You have received a new message from the contact form on your website <a href="iberezhnyi.vercel.app" rel="noopener nofollow noreferrer" style="text-decoration: underline;">iberezhnyi.vercel.app</a>:</p>
+                  <p>You have received a new message from the contact form on your website <strong><a href="iberezhnyi.vercel.app" rel="noopener nofollow noreferrer" style="text-decoration: underline; color: #222222;">iberezhnyi.vercel.app</a>:<strong></p>
                   <ul>
                     <li><strong>Name:</strong> ${name}</li>
                     <li><strong>Email:</strong> ${email}</li>
@@ -242,7 +242,7 @@ export const userHtmlMessageTemplate = ({
           <div class="content" style="box-sizing: border-box; display: block; margin: 0 auto; max-width: 600px; padding: 0;">
 
             <!-- START CENTERED WHITE CONTAINER -->
-            <span class="preheader" style="color: transparent; display: none; height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; mso-hide: all; visibility: hidden; width: 0;">Thank you for your message! We have received your message and will get back to you.</span>
+            <span class="preheader" style="color: transparent; display: none; height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; mso-hide: all; visibility: hidden; width: 0;">Thank you for getting in touch! I've successfully received your message and will respond to you as soon as possible.</span>
             <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="main" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background: #ffffff; border: 1px solid #eaebed; border-radius: 16px; width: 100%;" width="100%">
 
               <!-- START MAIN CONTENT AREA -->
@@ -250,7 +250,7 @@ export const userHtmlMessageTemplate = ({
                 <td class="wrapper" style="font-family: Helvetica, sans-serif; font-size: 16px; vertical-align: top; box-sizing: border-box; padding: 24px;" valign="top">
                   <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;"><strong>Hi ${name},</strong></p>
                   <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;">Thank you for getting in touch! I've successfully received your message and will respond to you as soon as possible.</p>
-                  <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;">In the meantime, if you have any further questions, don't hesitate to reach out to me.</p>
+                  <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;">In the meantime, if you have any further questions, don't hesitate to reach out to me. Additional contacts are on my website: <strong><a href="iberezhnyi.vercel.app" rel="noopener nofollow noreferrer" style="text-decoration: underline; color: #222222;">iberezhnyi.vercel.app</a></strong></p>
                   <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;"><strong>Best regards,</strong></p>
                   <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;"><strong>${adminName}.</strong></p>
                 </td>

@@ -4,8 +4,8 @@ export const contactInfo: IContactInfoItem[] = [
   {
     icon: 'FaPhoneAlt',
     title: 'Phone',
-    description: '+38(063) *** ** **',
-    href: 'tel:+38063*******',
+    description: '+38(063)-738-05-89',
+    href: 'tel:+380637380589',
   },
 
   {

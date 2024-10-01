@@ -66,6 +66,7 @@ const ContactForm: FC<ContactFormProps> = ({ onSubmit, isSubmitting }) => {
             <Input
               className={cn(
                 firstname ? 'focus:border-accent' : 'focus:border-red-300',
+                'w-[100%]',
               )}
               isRequired
               value={firstname}
@@ -81,6 +82,7 @@ const ContactForm: FC<ContactFormProps> = ({ onSubmit, isSubmitting }) => {
             <Input
               className={cn(
                 lastname ? 'focus:border-accent' : 'focus:border-red-300',
+                'w-[100%]',
               )}
               // isRequired
               value={lastname}
@@ -98,6 +100,7 @@ const ContactForm: FC<ContactFormProps> = ({ onSubmit, isSubmitting }) => {
             <Input
               className={cn(
                 email ? 'focus:border-accent' : 'focus:border-red-300',
+                'w-[100%]',
               )}
               isRequired
               value={email}
@@ -113,6 +116,7 @@ const ContactForm: FC<ContactFormProps> = ({ onSubmit, isSubmitting }) => {
             <Input
               className={cn(
                 phone ? 'focus:border-accent' : 'focus:border-red-300',
+                'w-[100%]',
               )}
               // isRequired
               value={phone}
@@ -124,7 +128,7 @@ const ContactForm: FC<ContactFormProps> = ({ onSubmit, isSubmitting }) => {
           </div>
         </div>
 
-        <div>
+        <div className="mb-4">
           <p className="ml-4 text-white/60">
             Message<sup className="text-red-300"> *</sup>
           </p>

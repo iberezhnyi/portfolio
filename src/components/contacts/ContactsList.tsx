@@ -22,7 +22,7 @@ const ContactsList: FC = () => {
               <p className="text-white/60">{item.title}</p>
               <Link
                 href={item.href}
-                className="text-xl hover:text-accent transition-all"
+                className="text-base xs:text-xl hover:text-accent transition-all"
                 target="_blank"
                 rel="noopener nofollow noreferrer"
               >
