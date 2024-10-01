@@ -29,6 +29,8 @@ export const mailService = async (props: IContactFormDataDto) => {
         email,
         phone,
         message,
+        fromMail,
+        fromName,
       }),
       text: adminTextMessageTemplate({
         name: `${firstname} ${lastname}`,
@@ -37,6 +39,8 @@ export const mailService = async (props: IContactFormDataDto) => {
         email,
         phone,
         message,
+        fromMail,
+        fromName,
       }),
     })
 
@@ -51,6 +55,8 @@ export const mailService = async (props: IContactFormDataDto) => {
         email,
         phone,
         message,
+        fromMail,
+        fromName,
       }),
       text: userTextMessageTemplate({
         name: `${firstname} ${lastname}`,
@@ -59,6 +65,8 @@ export const mailService = async (props: IContactFormDataDto) => {
         email,
         phone,
         message,
+        fromMail,
+        fromName,
       }),
     })
 

@@ -122,6 +122,6 @@ export interface IContactFormDataDto {
 
 export interface IMessageTemplate extends Partial<IContactFormDataDto> {
   name: string
-  fromMail?: string
-  fromName?: string
+  fromMail: string
+  fromName: string
 }
