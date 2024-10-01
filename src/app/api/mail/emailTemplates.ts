@@ -4,6 +4,8 @@ export const adminHtmlMessageTemplate = ({
   name,
   email,
   message,
+  phone,
+  adminName,
 }: IMessageTemplate) => `
 <!doctype html>
 <html lang="en">
@@ -45,7 +47,7 @@ export const adminHtmlMessageTemplate = ({
 
         .main {
           border-left-width: 0 !important;
-          border-radius: 0 !important;
+          border-radius: 16 !important;
           border-right-width: 0 !important;
         }
 
@@ -110,6 +112,7 @@ export const adminHtmlMessageTemplate = ({
                   <ul>
                     <li><strong>Name:</strong> ${name}</li>
                     <li><strong>Email:</strong> ${email}</li>
+                    <li><strong>Phone:</strong> ${phone}</li>
                     <li><strong>Message:</strong> ${message}</li>
                   </ul>
                   <p>Please reply to this message as soon as possible.</p>
@@ -123,7 +126,7 @@ export const adminHtmlMessageTemplate = ({
               <table role="presentation" width="100%">
                 <tr>
                   <td class="content-block" style="color: #9a9ea6; font-size: 16px; text-align: center;">
-                    Company Inc, 7-11 Commercial Ct, Belfast BT1 2NB
+                    <span class="apple-link" style="color: #9a9ea6; font-size: 16px; text-align: center;"><a href="iberezhnyi.vercel.app" rel="noopener nofollow noreferrer" style="text-decoration: underline; color: #9a9ea6; font-size: 16px; text-align: center;">${adminName}</a>, Kyiv, Ukraine</span>
                   </td>
                 </tr>
               </table>
@@ -138,7 +141,10 @@ export const adminHtmlMessageTemplate = ({
 </html>
 `
 
-export const userHtmlMessageTemplate = ({ name, fromName }: IMessageTemplate) => `
+export const userHtmlMessageTemplate = ({
+  name,
+  adminName,
+}: IMessageTemplate) => `
 <!doctype html>
 <html lang="ru">
   <head>
@@ -179,7 +185,7 @@ export const userHtmlMessageTemplate = ({ name, fromName }: IMessageTemplate) =>
 
   .main {
     border-left-width: 0 !important;
-    border-radius: 0 !important;
+    border-radius: 16px !important;
     border-right-width: 0 !important;
   }
 
@@ -245,8 +251,8 @@ export const userHtmlMessageTemplate = ({ name, fromName }: IMessageTemplate) =>
                   <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;"><strong>Hello, ${name}</strong></p>
                   <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;">Thank you for your message! We have received your message and will get back to you.</p>
                   <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;">If you have any additional questions, feel free to contact me.</p>
-                  <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;"><strong>Best regards,</strong></p>
-                  <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;"><strong>${fromName}</strong></p>
+                  <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;"><strong>Best regards!</strong></p>
+                  <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;"><strong>${adminName}.</strong></p>
                 </td>
               </tr>
 
@@ -258,7 +264,7 @@ export const userHtmlMessageTemplate = ({ name, fromName }: IMessageTemplate) =>
               <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;" width="100%">
                 <tr>
                   <td class="content-block" style="font-family: Helvetica, sans-serif; vertical-align: top; color: #9a9ea6; font-size: 16px; text-align: center;" valign="top" align="center">
-                    <span class="apple-link" style="color: #9a9ea6; font-size: 16px; text-align: center;"><a href="#" style="text-decoration: underline; color: #9a9ea6; font-size: 16px; text-align: center;">${fromName}</a>, Kyiv, Ukraine</span>
+                    <span class="apple-link" style="color: #9a9ea6; font-size: 16px; text-align: center;"><a href="iberezhnyi.vercel.app" rel="noopener nofollow noreferrer" style="text-decoration: underline; color: #9a9ea6; font-size: 16px; text-align: center;">${adminName}</a>, Kyiv, Ukraine</span>
                   </td>
                 </tr>
               </table>
@@ -282,6 +288,5 @@ Some admin text message
 export const userTextMessageTemplate = ({}: IMessageTemplate) => `
 Some user text message
 `
-
 
 // <br> Если вы не хотите получать уведомления, <a href="#" style="text-decoration: underline; color: #9a9ea6; font-size: 16px; text-align: center;">отпишитесь здесь</a>.

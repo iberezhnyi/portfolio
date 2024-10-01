@@ -7,20 +7,20 @@ import {
 } from './emailTemplates'
 import { IContactFormDataDto } from '@/interfaces/interfaces'
 
-const fromMail = process.env.FROM_MAIL
-const fromName = process.env.FROM_NAME
+const adminMail = process.env.ADMIN_MAIL
+const adminName = process.env.ADMIN_NAME
 
 export const mailService = async (props: IContactFormDataDto) => {
   const { firstname, lastname, email, phone, message } = props
 
   try {
-    if (!fromMail || !fromName) {
+    if (!adminMail || !adminName) {
       throw new Error('Server configuration error')
     }
 
     const adminMessage = await mailServiceConfig({
       from: { address: email, name: `${firstname} ${lastname}` },
-      to: { address: fromMail, name: fromName },
+      to: { address: adminMail, name: adminName },
       subject: `Contact Form Submission`,
       html: adminHtmlMessageTemplate({
         name: `${firstname} ${lastname}`,
@@ -29,8 +29,8 @@ export const mailService = async (props: IContactFormDataDto) => {
         email,
         phone,
         message,
-        fromMail,
-        fromName,
+        adminMail,
+        adminName,
       }),
       text: adminTextMessageTemplate({
         name: `${firstname} ${lastname}`,
@@ -39,15 +39,15 @@ export const mailService = async (props: IContactFormDataDto) => {
         email,
         phone,
         message,
-        fromMail,
-        fromName,
+        adminMail,
+        adminName,
       }),
     })
 
     const userMessage = await mailServiceConfig({
-      from: { address: fromMail, name: fromName },
+      from: { address: adminMail, name: adminName },
       to: { address: email, name: `${firstname} ${lastname}` },
-      subject: `Response from ${fromName}`,
+      subject: `Response from ${adminName}`,
       html: userHtmlMessageTemplate({
         name: `${firstname} ${lastname}`,
         firstname,
@@ -55,8 +55,8 @@ export const mailService = async (props: IContactFormDataDto) => {
         email,
         phone,
         message,
-        fromMail,
-        fromName,
+        adminMail,
+        adminName,
       }),
       text: userTextMessageTemplate({
         name: `${firstname} ${lastname}`,
@@ -65,8 +65,8 @@ export const mailService = async (props: IContactFormDataDto) => {
         email,
         phone,
         message,
-        fromMail,
-        fromName,
+        adminMail,
+        adminName,
       }),
     })
 
