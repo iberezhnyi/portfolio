@@ -13,7 +13,7 @@ interface ProjectSliderProps {
   onImageLoad: () => void
   setLoading: (bool: boolean) => void
 }
-// xl:mt-6
+
 const ProjectsSlider: FC<ProjectSliderProps> = ({
   allProjects,
   currentProject,
@@ -39,7 +39,8 @@ const ProjectsSlider: FC<ProjectSliderProps> = ({
               <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
 
               {loading && (
-                <div className="absolute z-20 flex justify-center items-center w-full h-full bg-accent">
+                <div className="absolute z-10 flex justify-center items-center w-full h-full">
+                  <div className="fixed w-full h-[460px] bg-transparent backdrop-blur-xl"></div>
                   <ClipLoader color="#fff" loading={loading} size={50} />
                 </div>
               )}
@@ -50,7 +51,7 @@ const ProjectsSlider: FC<ProjectSliderProps> = ({
                   fill
                   className="object-cover"
                   alt=""
-                  // sizes="(max-width: 1200px) 100vw, 50vw"
+                  sizes="(max-width: 1200px) 100vw, 50vw"
                   onLoad={onImageLoad}
                 />
               </div>
