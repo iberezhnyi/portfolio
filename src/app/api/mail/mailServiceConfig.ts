@@ -31,6 +31,14 @@ export const mailServiceConfig = async ({
       },
     } as SMTPTransport.Options)
 
+    // console.log('object :>> ', {
+    //   from,
+    //   to,
+    //   subject,
+    //   html,
+    //   text,
+    // })
+
     const info = await transporter.sendMail({
       from,
       to,

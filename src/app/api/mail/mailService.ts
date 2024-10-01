@@ -62,7 +62,10 @@ export const mailService = async (props: IContactFormDataDto) => {
       }),
     })
 
-    if (userMessage || adminMessage) {
+    // console.log('userMessage :>> ', userMessage)
+    // console.log('adminMessage :>> ', adminMessage)
+
+    if (!userMessage.accepted.length || !adminMessage.accepted.length) {
       throw new Error('Failed to send email')
     }
   } catch (error) {

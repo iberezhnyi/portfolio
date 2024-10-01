@@ -48,7 +48,7 @@ const ContactForm: FC<ContactFormProps> = ({ onSubmit, isSubmitting }) => {
     <div className="xl:w-[54%] order-2 xl:order-none">
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col gap-6 p-10 bg-[#27272C] rounded-xl"
+        className="flex flex-col gap-2 p-10 bg-[#27272C] rounded-xl"
       >
         <h3 className="text-4xl text-accent">
           Let&apos;s connect or share your feedback
@@ -58,64 +58,88 @@ const ContactForm: FC<ContactFormProps> = ({ onSubmit, isSubmitting }) => {
           some feedback, feel free to send a message. I&apos;d love to hear from
           you!
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Input
-            className={cn(
-              firstname ? 'focus:border-accent' : 'focus:border-red-300',
-            )}
-            isRequired
-            value={firstname}
-            onChange={(e) => setFirstname(e.target.value)}
-            type="text"
-            name="firstname"
-            placeholder="Firstname"
-          />
-          <Input
-            className={cn(
-              lastname ? 'focus:border-accent' : 'focus:border-red-300',
-            )}
-            isRequired
-            value={lastname}
-            onChange={(e) => setLastname(e.target.value)}
-            type="text"
-            name="lastname"
-            placeholder="Lastname"
-          />
-          <Input
-            className={cn(
-              email ? 'focus:border-accent' : 'focus:border-red-300',
-            )}
-            isRequired
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            type="email"
-            name="email"
-            placeholder="Email address"
-          />
-          <Input
-            className={cn(
-              phone ? 'focus:border-accent' : 'focus:border-red-300',
-            )}
-            isRequired
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            type="text"
-            name="phone"
-            placeholder="Phone number"
-          />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+          <div>
+            <p className="ml-4 text-white/60">
+              Firstname<sup className="text-red-300"> *</sup>
+            </p>
+            <Input
+              className={cn(
+                firstname ? 'focus:border-accent' : 'focus:border-red-300',
+              )}
+              isRequired
+              value={firstname}
+              onChange={(e) => setFirstname(e.target.value)}
+              type="text"
+              name="firstname"
+              // placeholder="Firstname*"
+            />
+          </div>
+
+          <div>
+            <p className="ml-4 text-white/60">Lastname</p>
+            <Input
+              className={cn(
+                lastname ? 'focus:border-accent' : 'focus:border-red-300',
+              )}
+              // isRequired
+              value={lastname}
+              onChange={(e) => setLastname(e.target.value)}
+              type="text"
+              name="lastname"
+              // placeholder="Lastname"
+            />
+          </div>
+
+          <div>
+            <p className="ml-4 text-white/60">
+              Email<sup className="text-red-300"> *</sup>
+            </p>
+            <Input
+              className={cn(
+                email ? 'focus:border-accent' : 'focus:border-red-300',
+              )}
+              isRequired
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              name="email"
+              // placeholder="Email address*"
+            />
+          </div>
+
+          <div>
+            <p className="ml-4 text-white/60">Phone</p>
+            <Input
+              className={cn(
+                phone ? 'focus:border-accent' : 'focus:border-red-300',
+              )}
+              // isRequired
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              type="text"
+              name="phone"
+              // placeholder="Phone number"
+            />
+          </div>
         </div>
 
-        <Textarea
-          className={cn(
-            'h-[200px] outline-none',
-            message ? 'focus:border-accent' : 'focus:border-red-300 ',
-          )}
-          isRequired
-          value={message}
-          name="message"
-          onChange={(e) => setMessage(e.target.value)}
-          placeholder="Type your message here"
-        />
+        <div>
+          <p className="ml-4 text-white/60">
+            Message<sup className="text-red-300"> *</sup>
+          </p>
+          <Textarea
+            className={cn(
+              'h-[200px] outline-none',
+              message ? 'focus:border-accent' : 'focus:border-red-300 ',
+            )}
+            isRequired
+            value={message}
+            name="message"
+            onChange={(e) => setMessage(e.target.value)}
+            placeholder="Type your message here"
+          />
+        </div>
 
         <div className="flex flex-col items-center sm:flex-row sm:justify-between">
           <Button
@@ -134,7 +158,7 @@ const ContactForm: FC<ContactFormProps> = ({ onSubmit, isSubmitting }) => {
             )}
           </Button>
           <p className="text-center text-white/60">
-            All fields are required<sup className="text-red-300"> *</sup>
+            Required fields<sup className="text-red-300"> *</sup>
           </p>
         </div>
       </form>
