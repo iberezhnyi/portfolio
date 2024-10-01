@@ -82,7 +82,7 @@ export const adminHtmlMessageTemplate = ({
           font-size: inherit !important;
           font-weight: inherit !important;
           line-height: inherit !important;
-          text-decoration: none !important;
+          text-decoration: none;
         }
 
         #MessageViewBody a {
@@ -125,7 +125,7 @@ export const adminHtmlMessageTemplate = ({
             <div class="footer" style="text-align: center;">
               <table role="presentation" width="100%">
                 <tr>
-                  <td class="content-block" style="color: #9a9ea6; font-size: 16px; text-align: center;">
+                  <td class="content-block" style="color: #9a9ea6; font-size: 16px; text-align: center; font-style: italic;">
                     <span class="apple-link" style="color: #9a9ea6; font-size: 16px; text-align: center;"><a href="iberezhnyi.vercel.app" rel="noopener nofollow noreferrer" style="text-decoration: underline; color: #9a9ea6; font-size: 16px; text-align: center;">${adminName}</a>, Kyiv, Ukraine</span>
                   </td>
                 </tr>
@@ -220,7 +220,7 @@ export const userHtmlMessageTemplate = ({
     font-size: inherit !important;
     font-weight: inherit !important;
     line-height: inherit !important;
-    text-decoration: none !important;
+    text-decoration: none;
   }
 
   #MessageViewBody a {
@@ -252,7 +252,7 @@ export const userHtmlMessageTemplate = ({
                   <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;">Thank you for your message! We have received your message and will get back to you.</p>
                   <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;">If you have any additional questions, feel free to contact me.</p>
                   <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;"><strong>Best regards!</strong></p>
-                  <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;"><strong>${adminName}.</strong></p>
+                  <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;"><strong><a href="iberezhnyi.vercel.app" rel="noopener nofollow noreferrer" style="text-decoration: underline; color: #9a9ea6; font-size: 16px; text-align: center;">${adminName}.</a></strong></p>
                 </td>
               </tr>
 
@@ -263,7 +263,7 @@ export const userHtmlMessageTemplate = ({
             <div class="footer" style="clear: both; padding-top: 24px; text-align: center; width: 100%;">
               <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;" width="100%">
                 <tr>
-                  <td class="content-block" style="font-family: Helvetica, sans-serif; vertical-align: top; color: #9a9ea6; font-size: 16px; text-align: center;" valign="top" align="center">
+                  <td class="content-block" style="font-family: Helvetica, sans-serif; vertical-align: top; color: #9a9ea6; font-size: 16px; text-align: center; font-style: italic;" valign="top" align="center">
                     <span class="apple-link" style="color: #9a9ea6; font-size: 16px; text-align: center;"><a href="iberezhnyi.vercel.app" rel="noopener nofollow noreferrer" style="text-decoration: underline; color: #9a9ea6; font-size: 16px; text-align: center;">${adminName}</a>, Kyiv, Ukraine</span>
                   </td>
                 </tr>
