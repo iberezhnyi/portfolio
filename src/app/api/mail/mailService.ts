@@ -19,10 +19,7 @@ export const mailService = async (props: IContactFormDataDto) => {
     }
 
     const adminMessage = await mailServiceConfig({
-      from: {
-        address: 'iberezhnyi.vercel.app',
-        name: `${firstname} ${lastname}`,
-      },
+      from: { address: email, name: `${firstname} ${lastname}` },
       to: { address: adminMail, name: adminName },
       subject: `Contact Form Submission`,
       html: adminHtmlMessageTemplate({
@@ -50,7 +47,8 @@ export const mailService = async (props: IContactFormDataDto) => {
     const userMessage = await mailServiceConfig({
       from: { address: adminMail, name: adminName },
       to: { address: email, name: `${firstname} ${lastname}` },
-      subject: `Response from ${adminName}`,
+      // subject: `Response from ${adminName}`,
+      subject: `Thank you for contacting me!`,
       html: userHtmlMessageTemplate({
         name: `${firstname} ${lastname}`,
         firstname,

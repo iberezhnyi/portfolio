@@ -108,7 +108,7 @@ export const adminHtmlMessageTemplate = ({
               <tr>
                 <td class="wrapper" style="padding: 24px;">
                   <p>Hello,</p>
-                  <p>You have received a new message from the contact form on your website:</p>
+                  <p>You have received a new message from the contact form on your website <a href="iberezhnyi.vercel.app" rel="noopener nofollow noreferrer" style="text-decoration: underline;">iberezhnyi.vercel.app</a>:</p>
                   <ul>
                     <li><strong>Name:</strong> ${name}</li>
                     <li><strong>Email:</strong> ${email}</li>
@@ -248,11 +248,11 @@ export const userHtmlMessageTemplate = ({
               <!-- START MAIN CONTENT AREA -->
               <tr>
                 <td class="wrapper" style="font-family: Helvetica, sans-serif; font-size: 16px; vertical-align: top; box-sizing: border-box; padding: 24px;" valign="top">
-                  <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;"><strong>Hello, ${name}</strong></p>
-                  <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;">Thank you for your message! We have received your message and will get back to you.</p>
-                  <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;">If you have any additional questions, feel free to contact me.</p>
-                  <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;"><strong>Best regards!</strong></p>
-                  <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;"><strong><a href="iberezhnyi.vercel.app" rel="noopener nofollow noreferrer" style="text-decoration: underline; color: #9a9ea6; font-size: 16px; text-align: center;">${adminName}.</a></strong></p>
+                  <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;"><strong>Hi ${name},</strong></p>
+                  <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;">Thank you for getting in touch! I've successfully received your message and will respond to you as soon as possible.</p>
+                  <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;">In the meantime, if you have any further questions, don't hesitate to reach out to me.</p>
+                  <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;"><strong>Best regards,</strong></p>
+                  <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;"><strong>${adminName}.</strong></p>
                 </td>
               </tr>
 
