@@ -23,7 +23,7 @@ const Projects: FC = () => {
   }
 
   const handleImageLoad = () => {
-    setLoading(false) // Скрыть спиннер, когда изображение загружено
+    setLoading(false)
   }
 
   return (

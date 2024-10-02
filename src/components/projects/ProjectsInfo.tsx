@@ -10,17 +10,11 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
-import {
-  availablePositionsXL,
-  availablePositionsLG,
-  availablePositionsMD,
-  availablePositionsSM,
-  availablePositionsXS,
-} from '@/helpers/getRandomPosition'
+import { availablePositionsXL } from '@/helpers/getRandomPosition'
 import { BsArrowUpRight, BsGithub } from 'react-icons/bs'
 import { IProject } from '@/interfaces/interfaces'
 import NodesCanvas from './NodesCanvas/NodesCanvas'
-import { lG, mD, sM, xL, xS } from '@/helpers/mediaQueries'
+import { xL } from '@/helpers/mediaQueries'
 
 interface ProjectsInfoProps {
   currentProject: IProject
@@ -30,28 +24,43 @@ const ProjectsInfo: FC<ProjectsInfoProps> = ({ currentProject }) => {
   const [availablePositions, setAvailablePositions] = useState<
     [number, number][]
   >([])
+  const [nodes, setNodes] = useState(false)
+
+  console.log('nodes :>> ', nodes)
 
   const isXL = useMediaQuery(xL)
-  const isLG = useMediaQuery(lG)
-  const isMD = useMediaQuery(mD)
-  const isSM = useMediaQuery(sM)
-  const isXS = useMediaQuery(xS)
+  // const isLG = useMediaQuery(lG)
+  // const isMD = useMediaQuery(mD)
+  // const isSM = useMediaQuery(sM)
+  // const isXS = useMediaQuery(xS)
 
   useEffect(() => {
     if (isXL) {
       setAvailablePositions([...availablePositionsXL])
-    } else if (isLG) {
-      setAvailablePositions([...availablePositionsLG])
-    } else if (isMD) {
-      setAvailablePositions([...availablePositionsMD])
-    } else if (isSM) {
-      setAvailablePositions([...availablePositionsSM])
-    } else if (isXS) {
-      setAvailablePositions([...availablePositionsXS])
-    } else {
-      setAvailablePositions([])
+      setNodes(true)
     }
-  }, [isXL, isLG, isMD, isSM, isXS])
+    //   else if (isLG) {
+    //   setAvailablePositions([...availablePositionsLG])
+    // } else if (isMD) {
+    //   setAvailablePositions([...availablePositionsMD])
+    // } else if (isSM) {
+    //   setAvailablePositions([...availablePositionsSM])
+    // } else if (isXS) {
+    //   setAvailablePositions([...availablePositionsXS])
+    // }
+    else {
+      setAvailablePositions([])
+      setNodes(false)
+    }
+  }, [
+    isXL,
+    // isLG,
+    // isMD,
+    // isSM,
+    // isXS
+  ])
+
+  console.log('isXL :>> ', isXL)
 
   return (
     <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
@@ -76,8 +85,10 @@ const ProjectsInfo: FC<ProjectsInfoProps> = ({ currentProject }) => {
         </div>
 
         <div>
-          {availablePositions.length === 0 ? (
-            <ul className="flex flex-wrap gap-4 mb-4">
+          {/* {availablePositions.length === 0 ? ( */}
+
+          {!nodes ? (
+            <ul className="flex flex-wrap gap-4 mb-4" translate="no">
               {currentProject.stack.map((item, index) => (
                 <li key={index} className="text-xl text-accent">
                   {item.name}

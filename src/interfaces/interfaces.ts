@@ -40,13 +40,13 @@ export interface IProject {
   github: IGithubLinks
 }
 
+interface IStack {
+  name: string
+}
+
 interface IGithubLinks {
   frontend?: string
   backend?: string
-}
-
-interface IStack {
-  name: string
 }
 
 // resume

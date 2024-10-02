@@ -61,7 +61,7 @@ const ContactForm: FC<ContactFormProps> = ({ onSubmit, isSubmitting }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
           <div>
             <p className="ml-4 text-white/60">
-              Firstname<sup className="text-red-300"> *</sup>
+              First name<sup className="text-red-300"> *</sup>
             </p>
             <Input
               className={cn(
@@ -78,7 +78,7 @@ const ContactForm: FC<ContactFormProps> = ({ onSubmit, isSubmitting }) => {
           </div>
 
           <div>
-            <p className="ml-4 text-white/60">Lastname</p>
+            <p className="ml-4 text-white/60">Last name</p>
             <Input
               className={cn(
                 lastname ? 'focus:border-accent' : 'focus:border-red-300',

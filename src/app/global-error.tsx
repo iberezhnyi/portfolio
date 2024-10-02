@@ -22,7 +22,11 @@ const GlobalError: FC<IGlobalErrorProps> = ({ error }) => {
           <Header />
 
           <div className="flex flex-col items-center justify-center p-4 rounded-md">
-            <Image src="/assets/errors/222.png" alt="" className="mb-4"></Image>
+            <Image
+              src="/assets/errors/error-emoji.png"
+              alt=""
+              className="mb-4"
+            ></Image>
             <h1 className="text-2xl font-bold mb-4">An Error Occurred</h1>
             <h2 className="text-xl font-bold mb-2">{error.message}</h2>
             <p className="mb-4">Please</p>
