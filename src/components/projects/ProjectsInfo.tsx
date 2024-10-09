@@ -26,7 +26,7 @@ const ProjectsInfo: FC<ProjectsInfoProps> = ({ currentProject }) => {
   >([])
   const [nodes, setNodes] = useState(false)
 
-  console.log('nodes :>> ', nodes)
+  // console.log('nodes :>> ', nodes)
 
   const isXL = useMediaQuery(xL)
   // const isLG = useMediaQuery(lG)
@@ -60,7 +60,7 @@ const ProjectsInfo: FC<ProjectsInfoProps> = ({ currentProject }) => {
     // isXS
   ])
 
-  console.log('isXL :>> ', isXL)
+  // console.log('isXL :>> ', isXL)
 
   return (
     <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
