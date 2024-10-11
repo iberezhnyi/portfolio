@@ -73,7 +73,7 @@ export const allProjects: IProject[] = [
   {
     num: '03',
     category: 'fullstack',
-    title: 'Phone book APP',
+    title: 'Phonebook APP',
     team: false,
     description:
       'An APP for managing personal contacts. Users can add, and delete contacts, with secure authentication and a simple, intuitive interface for easy contact management.',
