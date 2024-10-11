@@ -174,11 +174,11 @@ export const technologies: ITechnology[] = [
     iconLib: 'SiStyledcomponents',
   },
 
-  {
-    name: 'docker',
-    icon: '/assets/icons/tech/docker.png',
-    iconLib: 'SiDocker',
-  },
+  // {
+  //   name: 'docker',
+  //   icon: '/assets/icons/tech/docker.png',
+  //   iconLib: 'SiDocker',
+  // },
 ]
 
 export { about, experience, education, skills }
