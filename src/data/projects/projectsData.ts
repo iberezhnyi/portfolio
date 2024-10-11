@@ -49,7 +49,7 @@ export const allProjects: IProject[] = [
     title: 'Water Tracker APP',
     team: true,
     description:
-      'is an App that allows users to track their daily water consumption',
+      'An App that allows users to track their daily water consumption',
     stack: [
       { name: 'React JS' },
       { name: 'MongoDB' },

@@ -1,11 +1,21 @@
 import { FC } from 'react'
 import { contactInfo } from '@/data/contacts/contactsData'
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
+import {
+  FaPhoneAlt,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaTelegram,
+  FaLinkedinIn,
+  FaGithub,
+} from 'react-icons/fa'
 import Link from 'next/link'
 
 export const contactsIconMap = {
   FaPhoneAlt: <FaPhoneAlt />,
   FaEnvelope: <FaEnvelope />,
+  FaTelegram: <FaTelegram />,
+  FaLinkedinIn: <FaLinkedinIn />,
+  FaGithub: <FaGithub />,
   FaMapMarkerAlt: <FaMapMarkerAlt />,
 }
 

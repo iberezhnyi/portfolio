@@ -16,6 +16,27 @@ export const contactInfo: IContactInfoItem[] = [
   },
 
   {
+    icon: 'FaTelegram',
+    title: 'Telegram',
+    description: '@iberezhnyi',
+    href: 'https://t.me/iberezhnyi',
+  },
+
+  {
+    icon: 'FaLinkedinIn',
+    title: 'LinkedIn',
+    description: 'Ihor Berezhnyi',
+    href: 'https://www.linkedin.com/in/ihor-berezhnyi/',
+  },
+
+  {
+    icon: 'FaGithub',
+    title: 'GitHub',
+    description: 'iberezhnyi',
+    href: 'https://github.com/iberezhnyi',
+  },
+
+  {
     icon: 'FaMapMarkerAlt',
     title: 'Address',
     description: 'Ukraine, Kyiv',
