@@ -7,6 +7,7 @@ import { JetBrains_Mono } from 'next/font/google'
 // import { SnackbarProvider } from 'notistack'
 import './globals.css'
 import ClientLayout from './ClientLayout'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const jetBrainsMono = JetBrains_Mono({
   subsets: ['latin'],
@@ -25,6 +26,8 @@ interface RootLayoutProps {
 }
 
 const RootLayout: FC<Readonly<RootLayoutProps>> = ({ children }) => {
+  const trackingId = process.env.GA_ID || ''
+
   return (
     <html lang="en">
       <head>
@@ -57,6 +60,8 @@ const RootLayout: FC<Readonly<RootLayoutProps>> = ({ children }) => {
         {/* </SnackbarProvider> */}
         {/* </PageTransition> */}
       </body>
+
+      <GoogleAnalytics gaId={trackingId} />
     </html>
   )
 }
