@@ -8,6 +8,7 @@ import { JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import ClientLayout from './ClientLayout'
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { Analytics } from '@vercel/analytics/react'
 
 const jetBrainsMono = JetBrains_Mono({
   subsets: ['latin'],
@@ -59,6 +60,7 @@ const RootLayout: FC<Readonly<RootLayoutProps>> = ({ children }) => {
         {/* <main className="h-full">{children}</main> */}
         {/* </SnackbarProvider> */}
         {/* </PageTransition> */}
+        <Analytics />
       </body>
 
       <GoogleAnalytics gaId={trackingId} />
