@@ -62,6 +62,13 @@ const education: IEducation = {
       ],
       duration: '2023-2024',
     },
+
+    {
+      institution: 'National Aviation University (Kyiv)',
+      degree: 'Master’s of Law',
+      description: [],
+      duration: '2009-2014',
+    },
   ],
 }
 
